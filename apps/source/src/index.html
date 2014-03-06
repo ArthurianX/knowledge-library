@@ -53,6 +53,7 @@
     <% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
+    <script src="cordova.js"></script>
     <base href="/">
 </head>
 <body ng-class="getCurrentLocation();" ng-controller="AppCtrl" ng-cloak>

@@ -19,8 +19,7 @@
     "font-awesome": "~4.0.3",
     "angular-bootstrap": "latest",
     "angular-highlightjs": "latest",
-    "ionic": "~0.9.26",
-    "cordova": "3.3.0"
+    "ionic": "~0.9.26"
   },
   "devDependencies": {},
   "resolutions": {

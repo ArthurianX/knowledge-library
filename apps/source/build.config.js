@@ -84,7 +84,7 @@ module.exports = {
             'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
             'customlibs/highlight/highlight.pack.js',
             'vendor/angular-highlightjs/angular-highlightjs.min.js',
-            'vendor/ionic/release/ionic.bundle.min.js'
+            'vendor/ionic/release/ionic.bundle.min.js',
 
         ],
         css: [
