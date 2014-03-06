@@ -1,0 +1,29 @@
+{
+  "name": "zamolxian-admin",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.2.14",
+    "angular-cookie": "latest",
+    "angular-animate": "~1.2.14",
+    "angular-promise-tracker": "~2.0.0-beta2",
+    "angular-ui-router-anim-in-out": "0.0.5",
+    "angular-ui-router": "0.2.8-bowratic-tedium",
+    "angular-ui-utils": "~0.0.4",
+    "hammerjs": "~1.0.6",
+    "angular-hammer": "~1.0.3",
+    "angular-rn-carousel": "~0.1.6",
+    "angular-touch": "latest",
+    "angular-sanitize": "latest",
+    "angular-mocks": "~1.2.10",
+    "bootstrap": "~3.1.0",
+    "font-awesome": "~4.0.3",
+    "angular-bootstrap": "latest",
+    "angular-highlightjs": "latest"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular-ui-router": "0.2.8-bowratic-tedium",
+    "angular": "~1.2.14",
+    "angular-animate": "~1.2.14"
+  }
+}
