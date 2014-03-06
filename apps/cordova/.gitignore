@@ -1,3 +1,8 @@
 *.keystore
 *.sw*
 platforms/^.*
+plugins
+platforms
+.cordova
+LICENSE
+config.xml
