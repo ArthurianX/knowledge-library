@@ -1,13 +1,13 @@
 {
-  "author": "Kovacs Arthur",
-  "name": "articulate-angular",
+  "authors": "Bora George, Hening Arthur, Kovacs Arthur",
+  "name": "zamolxian-client",
   "version": "0.0.1",
-  "homepage": "https://github.com/ArthurianX/articulate-angular",
+  "homepage": "https://github.com/ArthurianX/Zamolxian",
   "licenses": {
     "type": "MIT",
     "url": ""
   },
-  "bugs": "https://github.com/ArthurianX/articulate-angular/issues",
+  "bugs": "https://github.com/ArthurianX/Zamolxian/issues",
   "repository": {
     "type": "git",
     "url": "git@github.com:ArthurianX/articulate-angular.git"

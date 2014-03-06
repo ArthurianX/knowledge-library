@@ -35,7 +35,7 @@
             //When Angular is loaded, load everything else that uses it.
             $script([<% scripts.forEach( function ( file ) { %> '<%= file %>', <% }); %>], function() {
                 // when all is done, execute bootstrap angular application
-                angular.bootstrap(document, ['articulate']);
+                angular.bootstrap(document, ['zamolxian']);
             });
         })
     </script>
@@ -57,15 +57,6 @@
     <base href="/">
 </head>
 <body ng-class="getCurrentLocation();" ng-controller="AppCtrl" ng-cloak>
-    <!--[if lt IE 8]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-
     <ng-include src="'templates/navigation.tpl.html'"></ng-include>
     <ng-include src="'templates/header.tpl.html'"></ng-include>
     <div ui-view="main" class="content anim-in-out anim-fade anim-slide-below" data-anim-speed="500"></div>

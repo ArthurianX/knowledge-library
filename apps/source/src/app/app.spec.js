@@ -3,7 +3,7 @@ describe('Main App Controller', function () {
   var ctrl = null;
 
 
-  beforeEach(module('articulate'));
+  beforeEach(module('zamolxian'));
   beforeEach(inject(function ($rootScope, $controller) {
     $scope = $rootScope.$new();
     ctrl = $controller('AppCtrl', {

@@ -1,4 +1,4 @@
-angular.module('articulate.home', [
+angular.module('zamolxian.home', [
       'ui.router.state',
       'ajoslin.promise-tracker'
     ])

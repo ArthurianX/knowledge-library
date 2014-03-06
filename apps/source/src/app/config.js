@@ -1,4 +1,4 @@
-angular.module('articulate.config', [])
+angular.module('zamolxian.config', [])
 
   /* The constants here are created as object so we don't pollute the window object with all of them, the module is
   *  included as a normal dependency and we call only the constant we want like myCtrl($scope, userapp) etc where we
