@@ -12,6 +12,9 @@ logs
 results
 .idea
 
+apps/client/hooks
+apps/client/platforms
+apps/client/plugins
 npm-debug.log
 node_modules
 vendor
