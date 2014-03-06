@@ -183,7 +183,7 @@ module.exports = function ( grunt ) {
                     }
                 ]
             },
-            copy_demand: {
+            copy_cordova_conf: {
                 files: [
                     {
                         src: [ '**' ],
@@ -193,7 +193,7 @@ module.exports = function ( grunt ) {
                     }
                 ]
             },
-            demand_prod: {
+            cordova_conf_prod: {
                 files: [
                     {
                         src: [ '**' ],
@@ -616,7 +616,7 @@ module.exports = function ( grunt ) {
     grunt.registerTask( 'build', [
         'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
         'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets', 'copy:build_vendor_fonts',
-        'copy:build_appjs', 'copy:build_vendorcss', 'copy:build_vendorjs', 'copy:copy_demand', 'index:build', 'karmaconfig',
+        'copy:build_appjs', 'copy:build_vendorcss', 'copy:build_vendorjs', 'copy:copy_cordova_conf', 'index:build', 'karmaconfig',
         'karma:continuous'
     ]);
 
@@ -625,7 +625,7 @@ module.exports = function ( grunt ) {
      * minifying your code.
      */
     grunt.registerTask( 'compile', [
-        'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:move_prod', 'copy:demand_prod'
+        'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:move_prod', 'copy:cordova_conf_prod'
     ]);
 
     /**

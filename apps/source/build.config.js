@@ -9,7 +9,7 @@ module.exports = {
      */
     build_dir: 'build',
     compile_dir: 'bin',
-    production_dir: 'production/public',
+    production_dir: '../client/www',
 
     /**
      * This is a collection of file patterns that refer to our app code (the
