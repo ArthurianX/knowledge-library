@@ -101,11 +101,18 @@ module.exports = {
             'vendor/ionic/release/css/ionic.min.css'
         ],
         assets: [
+
+        ],
+        fonts: [
             'vendor/ionic/release/fonts/ionicons.eot',
             'vendor/ionic/release/fonts/ionicons.ttf',
             'vendor/ionic/release/fonts/ionicons.svg',
-            'vendor/ionic/release/fonts/ionicons.woff'
-
+            'vendor/ionic/release/fonts/ionicons.woff',
+            'vendor/font-awesome/fonts/FontAwesome.otf',
+            'vendor/font-awesome/fonts/fontawesome-webfont.eot',
+            'vendor/font-awesome/fonts/fontawesome-webfont.svg',
+            'vendor/font-awesome/fonts/fontawesome-webfont.ttf',
+            'vendor/font-awesome/fonts/fontawesome-webfont.woff'
         ]
     },
 };
