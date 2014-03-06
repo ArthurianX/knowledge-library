@@ -79,7 +79,6 @@ module.exports = {
             'vendor/angular-touch/angular-touch.min.js',
             'vendor/hammerjs/hammer.min.js',
             'vendor/angular-hammer/angular-hammer.js',
-            'vendor/ocLazyLoad/ocLazyLoad.js',
             'vendor/angular-bootstrap/ui-bootstrap.min.js',
             'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
             'customlibs/highlight/highlight.pack.js',
