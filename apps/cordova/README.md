@@ -1,4 +1,6 @@
-LearnApp
-========
+ionic-angular-cordova-seed
+==========================
 
-WebApp with documentation, tutorials and community around a select topic/framework/language.
+The perfect starting point for an Ionic project.
+
+- [Ionic Tutorials](http://ionicframework.com/tutorials/)
