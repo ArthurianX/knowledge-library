@@ -68,6 +68,8 @@ module.exports = {
     vendor_files: {
         js: [
             'vendor/angular/angular.min.js',
+            'vendor/ionic/release/js/ionic.min.js',
+            'vendor/ionic/release/js/ionic-angular.min.js',
             'vendor/angular-animate/angular-animate.min.js',
             'vendor/angular-cookie/angular-cookie.min.js',
             'vendor/angular-ui-router/release/angular-ui-router.min.js',
@@ -84,7 +86,7 @@ module.exports = {
             'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
             'customlibs/highlight/highlight.pack.js',
             'vendor/angular-highlightjs/angular-highlightjs.min.js',
-            'vendor/ionic/release/ionic.bundle.min.js',
+
 
         ],
         css: [
