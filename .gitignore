@@ -10,7 +10,10 @@ lib-cov
 pids
 logs
 results
-.idea/
+.idea
 
 npm-debug.log
 node_modules
+vendor
+build
+bin
