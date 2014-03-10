@@ -58,7 +58,7 @@ module.exports = function ( grunt ) {
             options: {
                 dest: 'CHANGELOG.md',
                 template: 'changelog.tpl',
-                github: 'arthurianx/tivity',
+                github: 'arthurianX/Zamolxian',
                 editor: 'subl -w'
             }
         },
