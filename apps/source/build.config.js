@@ -64,16 +64,13 @@ module.exports = {
     //TODO: We will use primary_files as the array to load the main libraries, when the logic is done in Gruntfile.js
     primary_files: {
       js: [
-          'vendor/angular/angular.min.js',
-          'vendor/ionic/release/js/ionic.min.js'
+          'vendor/angular/angular.min.js'
       ]
     },
     vendor_files: {
         js: [
             'vendor/angular/angular.min.js',
-            'vendor/ionic/release/js/ionic.min.js',
             /* ABOVE are main files, for filtering and comparison we load them here first */
-            'vendor/ionic/release/js/ionic-angular.min.js',
             'vendor/angular-animate/angular-animate.min.js',
             'vendor/angular-cookie/angular-cookie.min.js',
             'vendor/angular-ui-router/release/angular-ui-router.min.js',
@@ -98,16 +95,11 @@ module.exports = {
             'vendor/bootstrap/dist/css/bootstrap-theme.min.css',
             'vendor/font-awesome/css/font-awesome.min.css',
             'customlibs/highlight/monokai.css',
-            'vendor/ionic/release/css/ionic.min.css'
         ],
         assets: [
 
         ],
         fonts: [
-            'vendor/ionic/release/fonts/ionicons.eot',
-            'vendor/ionic/release/fonts/ionicons.ttf',
-            'vendor/ionic/release/fonts/ionicons.svg',
-            'vendor/ionic/release/fonts/ionicons.woff',
             'vendor/font-awesome/fonts/FontAwesome.otf',
             'vendor/font-awesome/fonts/fontawesome-webfont.eot',
             'vendor/font-awesome/fonts/fontawesome-webfont.svg',

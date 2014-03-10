@@ -18,8 +18,7 @@
     "bootstrap": "~3.1.0",
     "font-awesome": "~4.0.3",
     "angular-bootstrap": "latest",
-    "angular-highlightjs": "latest",
-    "ionic": "~0.9.26"
+    "angular-highlightjs": "latest"
   },
   "devDependencies": {},
   "resolutions": {
