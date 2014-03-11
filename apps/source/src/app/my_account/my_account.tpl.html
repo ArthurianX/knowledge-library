@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>My account </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../../common/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../common/bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="my_account.css">
+</head>
+<body>
+
+        <div class="row pagination-centered">
+            <div class="well span3 offset5"> My Account </div>
+        </div>
+
+
+        <div class="row">
+            <div class=" well span3 offset5"> <img src="user.jpg" class="img-responsive user-avatar" alt="avatar"/> </div>
+
+        </div>
+
+
+
+
+    <div class="row pagination-centered">
+        <div class="well span3 offset5" >
+            <div>Name: Client Name </div>
+
+            <div>Email: client@client.com </div>
+
+            <div>Account type: Free </div>
+
+            <div>Favourite frameworks
+                <ul class="list-no-bullets">
+                    <li> Angular </li>
+                    <li> Bootstrap </li>
+                    <li> ASP.NET </li>
+                </ul>
+            </div>
+
+            <div>Favourite languages
+                <ul class="list-no-bullets">
+                    <li> JavaScript</li>
+                    <li> TypeScript </li>
+                    <li> C# </li>
+                </ul>
+            </div>
+
+            <button class="btn btn-primary"> Change My Info</button>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="well span5 offset4">
+            <form >
+                <div class="row-fluid">
+                    <div> New Name: <input type="text" class="span5" placeholder="old username"/></div>
+                    <div> New Email: <input type="text" class="span5" placeholder="old mail"/> </div>
+
+                    <div class="dropdown span3">
+                        <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            account plan
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Free</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Premium</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="span10  btn-upd">
+                        <button class="btn btn-primary"> Update </button>
+                    </div>
+
+
+                </div>
+
+
+                <!--<div class="dropdown">-->
+                <!--<button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">-->
+                <!--Add new favorite framework-->
+                <!--<span class="caret"></span>-->
+                <!--</button>-->
+                <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">-->
+                <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ember</a></li>-->
+                <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ruby on Rails</a></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+
+                <!--<div class="dropdown">-->
+                <!--<button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">-->
+                <!--Add new favorite language.-->
+                <!--<span class="caret"></span>-->
+                <!--</button>-->
+                <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">-->
+                <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ruby</a></li>-->
+                <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">R</a></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+<script src="../../common/bootstrap/js/bootstrap.js">
+
+</script>
+</body>
+</html>
