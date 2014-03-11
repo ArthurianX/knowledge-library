@@ -1,0 +1,11 @@
+.well-zamolxis {
+    background-color: rgba(116, 190, 255, 0.95);
+}
+
+.X2-zamolxis {
+    transform:scale(2.0,2.0);
+    -ms-transform:scale(2.0,2.0); /* IE 9 */
+    -moz-transform:scale(2.0,2.0); /* Firefox */
+    -webkit-transform:scale(2.0,2.0); /* Safari and Chrome */
+    -o-transform:scale(2.0,2.0); /* Opera */
+}
