@@ -1,0 +1,18 @@
+body {
+    background-color: #00b3ee;
+}
+
+.front {
+    background-color: #00b3ee;
+    z-index: 2;
+}
+
+.back {
+    color: #f5f5f5;
+    background-color: #0e5895;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+}
