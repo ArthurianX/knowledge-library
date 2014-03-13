@@ -19,7 +19,7 @@ angular.module('zamolxian.config', [])
 
   //Firebase details
     .constant('firebase', {
-      dbLocation: '',
+      dbLocation: 'https://zamolxian.firebaseio.com/',
       dbID: '24214092343429'
     })
 
