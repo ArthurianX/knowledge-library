@@ -17,8 +17,8 @@ angular.module('zamolxian.services', [])
 })
 
 // me
-.factory('tutorials', function () {
-    var ref = new Firebase("https://zamolxian.firebaseio.com/tutorials");
+.factory('tutorials', ['firebase', function (firebase) {
+    var ref = new Firebase(firebase.dbLocation + "tutorials");
     return {
         getAll: function () {
             var tutorials = [];
@@ -31,7 +31,7 @@ angular.module('zamolxian.services', [])
             ref.push(tutorial);
         }
     };
-})
+}])
 
 .factory('community', function ($http, $q) {
     return {
@@ -50,8 +50,8 @@ angular.module('zamolxian.services', [])
 })
 
 //me
-.factory('tipstricks', function () {
-    var ref = new Firebase("https://zamolxian.firebaseio.com/tipstricks");
+.factory('tipstricks', ['firebase', function (firebase) {
+    var ref = new Firebase(firebase.dbLocation + "tipstricks");
     return {
         getAll: function () {
             var tipstricks = [];
@@ -64,7 +64,7 @@ angular.module('zamolxian.services', [])
             ref.push(tipstricks);
         }
     };
-})
+}])
 
 .factory('modulesupdates', function ($http, $q) {
     return {
@@ -83,8 +83,8 @@ angular.module('zamolxian.services', [])
 })
 
 // me
-.factory('readinglist', function () {
-    var ref = new Firebase("https://zamolxian.firebaseio.com/readinglist");
+.factory('readinglist', ['firebase', function (firebase) {
+    var ref = new Firebase(firebase.dbLocation + "readinglist");
     return {
         getAll: function () {
             var readinglist = [];
@@ -97,4 +97,4 @@ angular.module('zamolxian.services', [])
             ref.push(readinglist);
         }
     };
-});
+}]);
