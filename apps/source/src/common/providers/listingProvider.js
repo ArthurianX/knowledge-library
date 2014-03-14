@@ -8,9 +8,9 @@ angular.module("zalmoxian.providers", ["zamolxian.config", "fetchServices"])
             rawList["modules"] = modules.getAll();
             rawList["documentation"] = documentation.getAll();
 
-            getAll : function getAll() {
+
                 return rawList;
-            }
+
         }
 
 

@@ -1,5 +1,5 @@
-angular.module("zalmoxian.services", ["firebase", "zamolxian.config"])
-.factory("modules", function () {
+angular.module("listingModules", ["firebase", "zamolxian.config"])
+.factory("listingModules", function () {
     return {
         getAll: function () {
             var ref = new Firebase(firebaseURL.link + "/modules");

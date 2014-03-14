@@ -1,8 +1,8 @@
-angular.module("zalmoxian.services", ["firebase", "zamolxian.config"])
+angular.module("listingDocumentation", ["firebase", "zamolxian.config"])
 
 
 //First try to integrate firebase
-.factory("documentationService", function () {
+.factory("listing.documentation", function () {
     return {
         getAll: function () {
             var ref = new Firebase(firebaseURL.link + "/docs");
