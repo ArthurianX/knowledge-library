@@ -1,6 +1,6 @@
 angular.module('zamolxian.provider', ['zamolxian.services'])
 
-.provider('$zamolxian', ['tutorials', 'tipstricks', 'readinglist',
+.provider('$zamolxian', ['TutorialsService', 'TipsTricksService', 'ReadingListService',
         function(tutorials, tipstricks, readinglist) {
 
     // constructor
