@@ -20,7 +20,11 @@ angular.module('zamolxian', [
         'zamolxian.config',
         /*VVV PAGES VVV*/
         'zamolxian.home',
-        'zamolxian.irc'
+        'zamolxian.irc',
+        'zamolxian.my_account',
+        'zamolxian.docs',
+        'zamolxian.modules_updates',
+        'zamolxian.community'
 
     ])
 

@@ -1,7 +1,6 @@
 angular.module('zamolxian.my_account', [
         'ui.router.state',
-        'ajoslin.promise-tracker',
-        'ui.bootstrap'
+        'ajoslin.promise-tracker'
     ])
 
     .config(function config($stateProvider) {

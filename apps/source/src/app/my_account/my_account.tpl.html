@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div ng-controller="AccountCtrl">
 
-
-    <title>My account </title>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="../../common/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../../common/bootstrap/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="my_account.css">
-</head>
-<body>
 
 <div class="row pagination-centered">
-    <div class="well span3 offset5"> My Account</div>
+    <div class="well col-md-4 col-md-offset-5"> My Account</div>
 </div>
 
 
 <div class="row">
-    <div class=" well span3 offset5"><img src="user.jpg" class="img-responsive user-avatar" alt="avatar"/></div>
+    <div class=" well col-md-4 col-md-offset-5"><img src="user.jpg" class="img-responsive user-avatar" alt="avatar"/></div>
 
 </div>
 
 
 <div class="row pagination-centered">
-    <div class="well span3 offset5">
+    <div class="well col-md-4 col-md-offset-5">
         <div>Name: Client Name</div>
 
         <div>Email: client@client.com</div>
@@ -56,13 +41,13 @@
 </div>
 
 <div class="row ">
-    <div class="well span5 offset4">
+    <div class="well col-md-4 col-md-offset-5">
         <form>
             <div class="row-fluid">
                 <div> New Name: <input type="text" class="span5" placeholder="old username"/></div>
                 <div> New Email: <input type="text" class="span5" placeholder="old mail"/></div>
 
-                <div class="dropdown span3">
+                <div class="dropdown col-md-4">
                     <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
                         account plan
                         <span class="caret"></span>
@@ -74,7 +59,7 @@
                 </div>
 
 
-                <div class="span10  btn-upd">
+                <div class="col-md-10  btn-upd">
                     <button class="btn btn-primary"> Update</button>
                 </div>
 
@@ -85,9 +70,5 @@
     </div>
 </div>
 
+</div>
 
-<script src="../../common/bootstrap/js/bootstrap.js">
-
-</script>
-</body>
-</html>
