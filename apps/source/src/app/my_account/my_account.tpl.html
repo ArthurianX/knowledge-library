@@ -1,0 +1,74 @@
+<div ng-controller="AccountCtrl">
+
+
+<div class="row pagination-centered">
+    <div class="well col-md-4 col-md-offset-5"> My Account</div>
+</div>
+
+
+<div class="row">
+    <div class=" well col-md-4 col-md-offset-5"><img src="user.jpg" class="img-responsive user-avatar" alt="avatar"/></div>
+
+</div>
+
+
+<div class="row pagination-centered">
+    <div class="well col-md-4 col-md-offset-5">
+        <div>Name: Client Name</div>
+
+        <div>Email: client@client.com</div>
+
+        <div>Account type: Free</div>
+
+        <div>Favourite frameworks
+            <ul class="list-no-bullets">
+                <li> Angular</li>
+                <li> Bootstrap</li>
+                <li> ASP.NET</li>
+            </ul>
+        </div>
+
+        <div>Favourite languages
+            <ul class="list-no-bullets">
+                <li> JavaScript</li>
+                <li> TypeScript</li>
+                <li> C#</li>
+            </ul>
+        </div>
+
+        <button class="btn btn-primary"> Change My Info</button>
+    </div>
+</div>
+
+<div class="row ">
+    <div class="well col-md-4 col-md-offset-5">
+        <form>
+            <div class="row-fluid">
+                <div> New Name: <input type="text" class="span5" placeholder="old username"/></div>
+                <div> New Email: <input type="text" class="span5" placeholder="old mail"/></div>
+
+                <div class="dropdown col-md-4">
+                    <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        account plan
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Free</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Premium</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-10  btn-upd">
+                    <button class="btn btn-primary"> Update</button>
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</div>
+

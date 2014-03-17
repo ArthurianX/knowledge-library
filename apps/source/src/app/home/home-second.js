@@ -9,7 +9,7 @@ angular.module('zamolxian.home-second', [
 .config(function config($stateProvider) {
     $stateProvider.state('home-second', {
         url: '/home-second',
-        view: {
+        views: {
             "main": {
                 controller: 'HomeSecondCtrl',
                 templateUrl: 'home/home-second.tpl.html'

@@ -12,7 +12,7 @@ angular.module('zamolxian.home-first', [
         view: {
             "main": {
                 controller: 'HomeFirstCtrl',
-                templateUrl: 'home/home-first.tpl.html'
+                templateUrl: 'home/home.tpl.html'
             }
         },
         data: { pageTitle: 'Home' }

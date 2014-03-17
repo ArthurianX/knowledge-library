@@ -9,7 +9,7 @@ angular.module('zamolxian.tips-tricks', [
 .config(function config($stateProvider) {
     $stateProvider.state('tips-tricks', {
         url: '/tips-tricks',
-        view: {
+        views: {
             "main": {
                 controller: 'TipsTricksCtrl',
                 templateUrl: 'tips-tricks/tips-tricks.tpl.html'

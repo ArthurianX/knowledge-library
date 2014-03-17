@@ -8,8 +8,8 @@ angular.module('zamolxian.config', [])
   //Github settings
     .constant('github', {
       username: 'arthurianx',
-      repository: 'articulate-angular',
-      branch: 'master'
+      repository: 'Zamolxian',
+      branch: 'develop_george'
     })
 
   //UserApp.io details
@@ -18,13 +18,12 @@ angular.module('zamolxian.config', [])
     })
 
   //Firebase details
-    .constant('firebase', {
-      dbLocation: 'https://zamolxian.firebaseio.com/',
-      dbID: '24214092343429'
+    .constant('firebaseURL', {
+        link: "https://zalmoxian.firebaseio.com/"
     })
 
   //Name on site, if no account made
-    .value('name', 'Arthur')
+    .value('name', 'George')
 
   //User details, to be populated after login.
     .value('user', {

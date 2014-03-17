@@ -9,7 +9,7 @@ angular.module('zamolxian.tutorials', [
 .config(function config($stateProvider) {
     $stateProvider.state('tutorials', {
         url: '/tutorials',
-        view: {
+        views: {
             "main": {
                 controller: 'TutorialsCtrl',
                 templateUrl: 'tutorials/tutorials.tpl.html'

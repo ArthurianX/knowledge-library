@@ -1,0 +1,33 @@
+.user-avatar {
+    margin-right: 25%;
+    margin-left: 25%;
+    width: 50%;
+    height: 80%;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.list-no-bullets {
+    list-style-type: none;
+}
+
+.user-nameplate {
+    margin-right: 25%;
+    margin-left: 35%;
+    max-width: 50%;
+    height: auto;
+    width: auto;
+
+    background-color: rgba(245, 245, 245, 0.4);
+
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    border-radius: 15%;
+}
+
+
+.well-zamolxis {
+    background-color: rgba(116, 190, 255, 0.95);
+}

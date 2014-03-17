@@ -9,7 +9,7 @@ angular.module('zamolxian.settings', [
 .config(function config($stateProvider) {
     $stateProvider.state('settings', {
         url: '/settings',
-        view: {
+        views: {
             "main": {
                 controller: 'SettingsCtrl',
                 templateUrl: 'settings/settings.tpl.html'
