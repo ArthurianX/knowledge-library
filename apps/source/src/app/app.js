@@ -8,13 +8,8 @@ angular.module('zamolxian', [
         'ui.route',
         'anim-in-out',
         'ui.bootstrap',
-        /* Listing services */
-        'listingCommunity',
-        'listingDocumentation',
-        'listingModules',
         'ngTouch',
         /*VVV Providers VVV*/
-        //"zalmoxian.providers",
         'hljs',
         /*VVV App Config VVV*/
         'zamolxian.config',
