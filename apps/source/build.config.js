@@ -85,6 +85,8 @@ module.exports = {
             'vendor/angular-hammer/angular-hammer.js',
             'vendor/angular-bootstrap/ui-bootstrap.min.js',
             'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+            'vendor/firebase/firebase.js',
+            'vendor/angularfire/angularfire.min.js',
             'customlibs/highlight/highlight.pack.js',
             'vendor/angular-highlightjs/angular-highlightjs.min.js',
 
