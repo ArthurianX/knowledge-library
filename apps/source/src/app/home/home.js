@@ -22,7 +22,7 @@ angular.module('zamolxian.home', [
     })
 
     .controller('HomeCtrl', function HomeController($scope, promiseTracker) {
-        $scope.omniList = listingProvider.getAll();
+        $scope.omniList = listingProvider.getList();
     })
 
 ;
