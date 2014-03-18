@@ -1,4 +1,4 @@
-angular.module('zamolxian.services', [])
+angular.module('zamolxian.services.factory', [])
 
 .factory('CommunityService', function ($http, $q) {
     return {

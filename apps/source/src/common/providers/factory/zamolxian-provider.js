@@ -1,4 +1,4 @@
-angular.module('zamolxian.provider', ['zamolxian.services'])
+angular.module('zamolxian.providers.factory', ['zamolxian.services.factory'])
 
 .provider('$zamolxian', ['TutorialsService', 'TipsTricksService', 'ReadingListService',
         function(tutorials, tipstricks, readinglist) {
