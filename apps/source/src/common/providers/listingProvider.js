@@ -1,33 +1,46 @@
-angular.module("zalmoxian.providers", ["zamolxian.config", "listingDocumentation","listingCommunity","listingModules"])
+angular.module("zalmoxian.providers", ["zamolxian.config","firebase"])
 
-    .provider("listingProvider", function(listingCommunity,modules,documentation) {
+    .provider("listingProvider", function() {
 
-        this.rawList = [];
-        this.rawList["community"] = listingCommunity.getAll();
-        this.rawList["modules"] = modules.getAll();
-        this.rawList["documentation"] = documentation.getAll();
-        this.getAll = function(flags) {
-            return this.rawList;
-        };
+        function ListingService($firebase) {
 
-//        function DataProvider(flags) {
-//            var rawList = [];
-//            rawList["community"] = community.getAll();
-//            rawList["modules"] = modules.getAll();
-//            rawList["documentation"] = documentation.getAll();
-//
-//
-//                return rawList;
-//
-//        }
+            var firebaseLink = "https://zalmoxian.firebaseio.com/";
 
+            //users = $firebase(new Firebase(URL + '/' + ID));
 
-        this.$get = function (flags) {
-            var self = this;
-            var service = {
-                getList : this.getAll(flags)
+            var docsref = $firebase(new Firebase(firebaseLink + "/docs"));
+            var comsref = $firebase(new Firebase(firebaseLink + "/community"));
+            var modref = $firebase(new Firebase(firebaseLink + "/modules"));
+
+            var rawList = [];
+            rawList["community"] = comsref;
+            rawList["modules"] = modref;
+            rawList["documentation"] = docsref;
+
+            function getList (flags) {
+                return rawList;
+            }
+
+            function getDocs (flags) {
+                return docsref;
+            }
+
+            function getModules (flag) {
+                return modref;
+            }
+
+            function getCommunity (flag) {
+                return comsref;
+            }
+
+            this.getAll = function(flags) {
+                return rawList;
             };
+        }
 
-            return service;
+        this.$get = function (flags, $firebase) {
+
+            return new ListingService($firebase);
+
         };
     });

@@ -21,9 +21,9 @@ angular.module('zamolxian.home', [
       });
     })
 
-    .controller('HomeCtrl', function HomeController($scope, promiseTracker, listingCommunity) {
+    .controller('HomeCtrl', function HomeController($scope, promiseTracker, listingProvider) {
         /*$scope.omniList = listingProvider.getList();*/
-        $scope.data = listingCommunity.getAll();
+        $scope.data = listingProvider.getAll();
     })
 
 ;

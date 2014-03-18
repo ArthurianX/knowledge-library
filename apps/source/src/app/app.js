@@ -9,9 +9,9 @@ angular.module('zamolxian', [
         'anim-in-out',
         'ui.bootstrap',
         /* Listing services */
-        'listingCommunity',
-        'listingDocumentation',
-        'listingModules',
+//        'listingCommunity',
+//        'listingDocumentation',
+//        'listingModules',
         'ngTouch',
         /*VVV Providers VVV*/
         "zalmoxian.providers",
