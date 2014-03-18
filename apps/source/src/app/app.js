@@ -69,7 +69,7 @@ angular.module('zamolxian', [
     })
 
     .controller('FooterCtrl', function FooterCtrl($scope) {
-
+        // github provider here
 
     })
 
