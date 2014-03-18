@@ -1,5 +1,5 @@
 angular.module("listingCommunity", ["firebase", "zamolxian.config"])
-.factory("listingCommunity", function () {
+.factory("listingCommunity", function ($firebase) {
     return {
         getAll: function () {
             var ref = new Firebase(firebaseURL.link + "/community");

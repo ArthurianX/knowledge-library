@@ -14,7 +14,7 @@ angular.module('zamolxian', [
         'listingModules',
         'ngTouch',
         /*VVV Providers VVV*/
-        //"zalmoxian.providers",
+        "zalmoxian.providers",
         'hljs',
         /*VVV App Config VVV*/
         'zamolxian.config',

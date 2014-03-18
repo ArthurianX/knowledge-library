@@ -1,9 +1,9 @@
 angular.module("zalmoxian.providers", ["zamolxian.config", "listingDocumentation","listingCommunity","listingModules"])
 
-    .provider("listingProvider", function() {
+    .provider("listingProvider", function(listingCommunity,modules,documentation) {
 
         this.rawList = [];
-        this.rawList["community"] = community.getAll();
+        this.rawList["community"] = listingCommunity.getAll();
         this.rawList["modules"] = modules.getAll();
         this.rawList["documentation"] = documentation.getAll();
         this.getAll = function(flags) {
