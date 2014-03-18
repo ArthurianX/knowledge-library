@@ -1,0 +1,17 @@
+<div ng-view>
+    <div id="sp-nav" class="back">
+        <div class="list">
+            <ul>
+                <li>Menu item 1</li>
+                <li>Menu item 2</li>
+                <li>Menu item 3</li>
+            </ul>
+        </div>
+    </div>
+    <div id="sp-page" class="front">
+        <button ng-click="$spMenu.toggle(); toggleClass()">Menu</button>
+        <p>
+            Content here.
+        </p>
+    </div>
+</div>
