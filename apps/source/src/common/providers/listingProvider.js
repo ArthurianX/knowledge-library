@@ -2,8 +2,8 @@ angular.module("zalmoxian.providers", ["zamolxian.config", "firebase"])
 
     .provider("listingProvider", function () {
 
-
-        this.$get = function ($firebase) {
+        return {
+            $get : function ListingService($firebase) {
 
             return {
                 ListingService: function () {
@@ -46,11 +46,14 @@ angular.module("zalmoxian.providers", ["zamolxian.config", "firebase"])
                         commnunityList : rawList["community"],
                         modulesList    : rawList["modules"],
                         docList        : rawList["documentation"],
-                        fullList       : rawList
+                        fullList       : rawList,
+                        getCom : function getCommunity(flag) {
+                            return comsref;
+                        }
                     };
 
                 }
             };
 
-        };
+        }};
     });

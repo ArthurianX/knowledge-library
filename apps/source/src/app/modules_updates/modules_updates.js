@@ -16,6 +16,8 @@ angular.module('zamolxian.modules_updates', [
         });
     })
 
-    .controller("ModulesCtrl", function AccountCtrl($scope, promiseTracker) {
-
+    .controller("ModulesCtrl", function ModulesCtrl($scope, promiseTracker, listingProvider) {
+//            console.log(listingProvider);
+          $scope.data = listingProvider.ListingService;
+          console.log($scope.data);
     });
