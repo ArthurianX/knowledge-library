@@ -1,46 +1,56 @@
-angular.module("zalmoxian.providers", ["zamolxian.config","firebase"])
+angular.module("zalmoxian.providers", ["zamolxian.config", "firebase"])
 
-    .provider("listingProvider", function() {
+    .provider("listingProvider", function () {
 
-        function ListingService($firebase) {
 
-            var firebaseLink = "https://zalmoxian.firebaseio.com/";
+        this.$get = function ($firebase) {
 
-            //users = $firebase(new Firebase(URL + '/' + ID));
+            return {
+                ListingService: function () {
 
-            var docsref = $firebase(new Firebase(firebaseLink + "/docs"));
-            var comsref = $firebase(new Firebase(firebaseLink + "/community"));
-            var modref = $firebase(new Firebase(firebaseLink + "/modules"));
+                    var firebaseLink = "https://zalmoxian.firebaseio.com";
 
-            var rawList = [];
-            rawList["community"] = comsref;
-            rawList["modules"] = modref;
-            rawList["documentation"] = docsref;
+                    //users = $firebase(new Firebase(URL + '/' + ID));
 
-            function getList (flags) {
-                return rawList;
-            }
+                    var docsref = $firebase(new Firebase(firebaseLink + "/docs"));
+                    var comsref = $firebase(new Firebase(firebaseLink + "/community"));
+                    var modref = $firebase(new Firebase(firebaseLink + "/modules"));
 
-            function getDocs (flags) {
-                return docsref;
-            }
+                    var rawList = [];
+                    rawList["community"] = comsref;
+                    rawList["modules"] = modref;
+                    rawList["documentation"] = docsref;
 
-            function getModules (flag) {
-                return modref;
-            }
+                    function getList(flags) {
+                        return rawList;
+                    }
 
-            function getCommunity (flag) {
-                return comsref;
-            }
+                    function getDocs(flags) {
+                        return docsref;
+                    }
 
-            this.getAll = function(flags) {
-                return rawList;
+                    function getModules(flag) {
+                        return modref;
+                    }
+
+                    function getCommunity(flag) {
+                        return comsref;
+                    }
+
+                    function listAlert ( subj) {
+                        alert("I am an alert" + subj);
+                    }
+
+                    //return listAlert;
+                    return {
+                        commnunityList : rawList["community"],
+                        modulesList    : rawList["modules"],
+                        docList        : rawList["documentation"],
+                        fullList       : rawList
+                    };
+
+                }
             };
-        }
-
-        this.$get = function (flags, $firebase) {
-
-            return new ListingService($firebase);
 
         };
     });
