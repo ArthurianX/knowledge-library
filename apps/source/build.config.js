@@ -64,7 +64,8 @@ module.exports = {
     //TODO: We will use primary_files as the array to load the main libraries, when the logic is done in Gruntfile.js
     primary_files: {
       js: [
-          'vendor/angular/angular.min.js'
+          'vendor/angular/angular.min.js',
+          'vendor/firebase/firebase.js'
       ]
     },
     vendor_files: {

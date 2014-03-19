@@ -1,6 +1,3 @@
-/**
- * Created by ahenning on 3/17/14.
- */
 angular.module('zamolxian.home', [
     'ui.router.state',
     'ajoslin.promise-tracker'
@@ -19,6 +16,8 @@ angular.module('zamolxian.home', [
     });
 })
 
-.controller("HomeCtrl", function HomeCtrl($scope, promiseTracker) {
+.controller("HomeCtrl", function HomeCtrl($scope, promiseTracker, factoryProvider) {
+        $scope.data = factoryProvider.FactoryProvider();
+        console.log($scope.data);
 
 });

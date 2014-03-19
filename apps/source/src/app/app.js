@@ -10,6 +10,7 @@ angular.module('zamolxian', [
         'ui.bootstrap',
         'ngTouch',
         /*VVV Providers VVV*/
+        'zamolxian.providers.factory',
         'hljs',
         /*VVV App Config VVV*/
         'zamolxian.config',
