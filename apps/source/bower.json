@@ -8,6 +8,8 @@
     "angular-ui-router": "0.2.8-bowratic-tedium",
     "angular-ui-utils": "~0.0.4",
     "angular-sanitize": "1.2.15-build.20+sha.d4ac254",
+    "firebase": "~1.0.2",
+    "angularfire": "~0.6.0",
     "angular-mocks": "1.2.15-build.20+sha.d4ac254",
     "ionic": "0.9.27"
   },
