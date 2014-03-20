@@ -1,0 +1,25 @@
+.slide {
+  transition: 1s all linear;
+}
+
+.slide.ng-enter, .slide.ng-leave {
+  transition: 1s all linear;
+  -webkit-transition: 1s all linear;
+//  transition: 500ms ease-in all;
+}
+ .slide.ng-enter {
+  opacity: 1;
+  width: 25%;
+}        /* starting animations for enter */
+.slide.ng-enter-active {
+  opacity: 1;
+  width: 25%;
+} /* terminal animations for enter */
+.slide.ng-leave {
+  opacity: 0.1;
+  width: 1%;
+}        /* starting animations for leave */
+.slide.ng-leave-active {
+  opacity: 0.1;
+  width: 1%;
+} /* terminal animations for leave */

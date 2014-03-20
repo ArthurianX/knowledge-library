@@ -14,9 +14,9 @@
 
 <div class="row pagination-centered">
     <div class="well col-md-4 col-md-offset-5">
-        <div>Name: Client Name</div>
+        <div>Name: {{userName}}</div>
 
-        <div>Email: client@client.com</div>
+        <div>Email: {{userMail}}</div>
 
         <div>Account type: Free</div>
 
@@ -36,16 +36,16 @@
             </ul>
         </div>
 
-        <button class="btn btn-primary"> Change My Info</button>
+        <button class="btn btn-primary" ng-click=" modData = true;"> Change My Info</button>
     </div>
 </div>
 
-<div class="row ">
+<div class="row " ng-show="modData === true">
     <div class="well col-md-4 col-md-offset-5">
-        <form>
+        <form novalidate="true">
             <div class="row-fluid">
-                <div> New Name: <input type="text" class="span5" placeholder="old username"/></div>
-                <div> New Email: <input type="text" class="span5" placeholder="old mail"/></div>
+                <div> New Name: <input type="text" class="span5" placeholder="{{userName}}" ng-model="newUserName"/></div>
+                <div> New Email: <input type="text" class="span5" placeholder="{{userMail}}" ng-model="newUserMail"/></div>
 
                 <div class="dropdown col-md-4">
                     <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
@@ -60,7 +60,7 @@
 
 
                 <div class="col-md-10  btn-upd">
-                    <button class="btn btn-primary"> Update</button>
+                    <button class="btn btn-primary" ng-click="updateUserData();"> Update</button>
                 </div>
 
 

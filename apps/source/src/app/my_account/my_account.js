@@ -1,6 +1,7 @@
 angular.module('zamolxian.my_account', [
         'ui.router.state',
-        'ajoslin.promise-tracker'
+        'ajoslin.promise-tracker',
+        'ngSanitize'
     ])
 
     .config(function config($stateProvider) {
@@ -16,6 +17,15 @@ angular.module('zamolxian.my_account', [
         });
     })
 
-    .controller("AccountCtrl", function AccountCtrl($scope, promiseTracker) {
+    .controller("AccountCtrl", function AccountCtrl($scope, promiseTracker, $sanitize) {
+            $scope.userName = "George Bora";
+            $scope.userMail = "gbora@pititechnologies.ro";
 
+            $scope.updateUserData = function() {
+                   $scope.userName = $sanitize($scope.newUserName);
+                   $scope.userMail = $sanitize($scope.newUserMail);
+                  console.log($sanitize($scope.newUserName));
+                  console.log($sanitize($scope.newUserMail));
+                  $scope.modData = false;
+            };
     });

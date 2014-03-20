@@ -16,6 +16,8 @@ angular.module('zamolxian', [
         /*VVV Providers VVV*/
         "zalmoxian.providers",
         'hljs',
+        /*directives*/
+        "zalmoxis.cards",
         /*VVV App Config VVV*/
         'zamolxian.config',
         /*VVV PAGES VVV*/

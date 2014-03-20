@@ -10,66 +10,92 @@
 
     </div>
 
-    <div class="row pagination-centered">
-        <div class="well col-md-3 col-md-offset-3">
-            Module Info on Module #1
-            <p>Language: Javascript</p>
-            <p>Version:  0.0.1</p>
-            <p>License: OpenSource (MIT)</p>
-            <p>Cost: </p>
-            <p> <i class="icon-fire X2-zamolxis"></i> </p>
-            <button class="btn btn-primary">See more</button>
-        </div>
 
-        <div class="well col-md-3  col-md-offset-1">
-            Update #1
-            <p>For Module #1</p>
-            <p> Short Description: Fixes security issues.</p>
+
+    <!--<div class="row pagination-centered">-->
+        <!--<div class="well col-md-3 col-md-offset-3">-->
+            <!--Module Info on Module #1-->
+            <!--<p>Language: Javascript</p>-->
+            <!--<p>Version:  0.0.1</p>-->
+            <!--<p>License: OpenSource (MIT)</p>-->
+            <!--<p>Cost: </p>-->
+            <!--<p> <i class="icon-fire X2-zamolxis"></i> </p>-->
+            <!--<button class="btn btn-primary">See more</button>-->
+        <!--</div>-->
+
+        <!--<div class="well col-md-3  col-md-offset-1">-->
+            <!--Update #1-->
+            <!--<p>For Module #1</p>-->
+            <!--<p> Short Description: Fixes security issues.</p>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row pagination-centered">-->
+        <!--<div class="well well-zamolxis col-md-3 col-md-offset-3">-->
+            <!--Module Info on Module #3-->
+            <!--<p>Language: Ruby</p>-->
+            <!--<p>Version:  0.0.1</p>-->
+            <!--<p>License: OpenSource (Apache)</p>-->
+            <!--<p>Cost: </p>-->
+            <!--<p> <i class="icon-fire X2-zamolxis"></i> </p>-->
+            <!--<button class="btn btn-inverse">See more</button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row pagination-centered">-->
+        <!--<div class="well col-md-3 col-md-offset-3">-->
+            <!--Module Info on Module #3-->
+            <!--<p>Language: Assembly</p>-->
+            <!--<p>Version:  12.33.2</p>-->
+            <!--<p>License: OpenSource (MIT)</p>-->
+            <!--<p>Cost: 700$</p>-->
+            <!--<p> <i class="icon-fire X2-zamolxis"></i> </p>-->
+            <!--<button class="btn btn-primary">See more</button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row pagination-centered">-->
+        <!--<div class="well well-zamolxis col-md-3 col-md-offset-3">-->
+            <!--Module Info on Module #4-->
+            <!--<p>Language: Binary</p>-->
+            <!--<p>Version:  1000</p>-->
+            <!--<p>License: What is a license</p>-->
+            <!--<p>Cost: 10 years out of your life</p>-->
+            <!--<p> <i class="icon-fire X2-zamolxis"></i> </p>-->
+            <!--<button class="btn btn-primary">See more</button>-->
+        <!--</div>-->
+
+        <!--<div class="well well-zamolxis col-md-3 col-md-offset-1">-->
+            <!--Module Info on Module #4-->
+            <!--Update #4-->
+            <!--<p>For Module #4</p>-->
+            <!--<p> Short Description: Fixes 1's and 0's.</p>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="card-zalmoxis" ng-init=" module = {'name' : 'angular', 'language' : 'js' , 'version' : '2.2'}">-->
+
+    <!--</div>-->
+
+    <div class="row">
+        <div class="well col-md-3 col-md-offset-2">
+            <input type="text" ng-model="querry.module"/>
         </div>
     </div>
 
-    <div class="row pagination-centered">
-        <div class="well well-zamolxis col-md-3 col-md-offset-3">
-            Module Info on Module #3
-            <p>Language: Ruby</p>
-            <p>Version:  0.0.1</p>
-            <p>License: OpenSource (Apache)</p>
-            <p>Cost: </p>
-            <p> <i class="icon-fire X2-zamolxis"></i> </p>
-            <button class="btn btn-inverse">See more</button>
-        </div>
+    <div class="row">
+        <ul>
+            <li class="slide well col-md-3 col-md-offset-2" ng-repeat="module in  modulesList | filter: querry.module">
+                <div class="card-zalmoxis" ng-model="module">
+                </div>
+
+            </li>
+        </ul>
+
     </div>
 
-    <div class="row pagination-centered">
-        <div class="well col-md-3 col-md-offset-3">
-            Module Info on Module #3
-            <p>Language: Assembly</p>
-            <p>Version:  12.33.2</p>
-            <p>License: OpenSource (MIT)</p>
-            <p>Cost: 700$</p>
-            <p> <i class="icon-fire X2-zamolxis"></i> </p>
-            <button class="btn btn-primary">See more</button>
-        </div>
-    </div>
 
-    <div class="row pagination-centered">
-        <div class="well well-zamolxis col-md-3 col-md-offset-3">
-            Module Info on Module #4
-            <p>Language: Binary</p>
-            <p>Version:  1000</p>
-            <p>License: What is a license</p>
-            <p>Cost: 10 years out of your life</p>
-            <p> <i class="icon-fire X2-zamolxis"></i> </p>
-            <button class="btn btn-primary">See more</button>
-        </div>
 
-        <div class="well well-zamolxis col-md-3 col-md-offset-1">
-            Module Info on Module #4
-            Update #4
-            <p>For Module #4</p>
-            <p> Short Description: Fixes 1's and 0's.</p>
-        </div>
-    </div>
 </div>
 
 

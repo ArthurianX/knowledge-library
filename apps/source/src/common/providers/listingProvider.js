@@ -10,8 +10,6 @@ angular.module("zalmoxian.providers", ["zamolxian.config", "firebase"])
 
                     var firebaseLink = "https://zalmoxian.firebaseio.com";
 
-                    //users = $firebase(new Firebase(URL + '/' + ID));
-
                     var docsref = $firebase(new Firebase(firebaseLink + "/docs"));
                     var comsref = $firebase(new Firebase(firebaseLink + "/community"));
                     var modref = $firebase(new Firebase(firebaseLink + "/modules"));
