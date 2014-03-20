@@ -57,8 +57,29 @@ angular.module('zamolxian.tutorials', [
     ];
 })
 
-.directive('card', function(cardData) {
+.directive('card', function() {
     return {
-        template: 'Title: {{cardData.title}}'
+        restrict: 'EA',
+        require: '^tutorial',
+        scope: {
+            tutorial: '='
+        },
+        template: '' +
+            '<h2>{{tutorial.title}}</h2>' +
+            '<p>{{tutorial.content}}</p>' +
+            '<label>Rate</label><span><rating value="tutorial.rating" max="10" readonly="false" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating></span>' +
+            '<br>' +
+            '<button class="btn btn-default btn-lg">' +
+            '<span class="glyphicon glyphicon-refresh"></span>' +
+            'Read later' +
+            '</button>' +
+            '<button class="btn btn-default btn-lg">' +
+                '<span class="glyphicon glyphicon-thumbs-up"></span>' +
+            'Like' +
+            '</button>' +
+            '<button class="btn btn-default btn-lg">' +
+            '<span class="glyphicon glyphicon-share"></span>' +
+            'Share' +
+            '</button>'
     };
 });
