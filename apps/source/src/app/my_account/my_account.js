@@ -21,7 +21,7 @@ angular.module('zamolxian.my_account', [
             $scope.userName = "George Bora";
             $scope.userMail = "gbora@pititechnologies.ro";
 
-            $scope.updateUserData = function() {
+            $scope.contactZalmoxis = function() {
                    $scope.userName = $sanitize($scope.newUserName);
                    $scope.userMail = $sanitize($scope.newUserMail);
                   console.log($sanitize($scope.newUserName));

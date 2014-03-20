@@ -36,31 +36,26 @@
             </ul>
         </div>
 
-        <button class="btn btn-primary" ng-click=" modData = true;"> Change My Info</button>
+        <button class="btn btn-primary" ng-click=" contact = true;">Contact the Team</button>
     </div>
 </div>
 
-<div class="row " ng-show="modData === true">
+<div class="row " ng-show="contact === true">
     <div class="well col-md-4 col-md-offset-5">
         <form novalidate="true">
             <div class="row-fluid">
-                <div> New Name: <input type="text" class="span5" placeholder="{{userName}}" ng-model="newUserName"/></div>
-                <div> New Email: <input type="text" class="span5" placeholder="{{userMail}}" ng-model="newUserMail"/></div>
-
-                <div class="dropdown col-md-4">
-                    <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                        account plan
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Free</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Premium</a></li>
-                    </ul>
-                </div>
+                <div> My Name: <input type="text" class="span5" placeholder="{{userName}}" ng-model="newUserName"/></div>
+                <div> My Email: <input type="text" class="span5" placeholder="{{userMail}}" ng-model="newUserMail"/></div>
+                <div> My Phone Number: <input type="text" class="span5" placeholder="{{userMail}}" ng-model="newUserMail"/></div>
+                <div> My City: <input type="text" class="span5" placeholder="{{userMail}}" ng-model="newUserMail"/></div>
+                <div> My County: <input type="text" class="span5" placeholder="{{userMail}}" ng-model="newUserMail"/></div>
+                <div> My Country: <input type="text" class="span5" placeholder="{{userMail}}" ng-model="newUserMail"/></div>
+                Placeholder for dinamic option
+                Placeholder for dinamic option
 
 
                 <div class="col-md-10  btn-upd">
-                    <button class="btn btn-primary" ng-click="updateUserData();"> Update</button>
+                    <button class="btn btn-primary" ng-click="contactZalmoxis();"> Update</button>
                 </div>
 
 
