@@ -18,6 +18,9 @@ angular.module('zamolxian.home', [
 
 .controller("HomeCtrl", function HomeCtrl($scope, promiseTracker, factoryProvider) {
         $scope.data = factoryProvider.FactoryProvider();
-        console.log($scope.data);
+        for (var id in $scope.data.readingList.$getIndex()) {
+            console.log(id);
+        }
+        console.log($scope.data.readingList);
 
 });
