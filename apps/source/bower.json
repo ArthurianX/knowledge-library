@@ -5,24 +5,17 @@
     "angular": "1.2.15-build.20+sha.d4ac254",
     "angular-cookie": "latest",
     "angular-animate": "1.2.15-build.20+sha.d4ac254",
-    "angular-promise-tracker": "~2.0.0-beta2",
-    "angular-ui-router-anim-in-out": "0.0.5",
     "angular-ui-router": "0.2.8-bowratic-tedium",
     "angular-ui-utils": "~0.0.4",
-    "hammerjs": "~1.0.6",
-    "angular-hammer": "~1.0.3",
-    "angular-rn-carousel": "~0.1.6",
-    "angular-touch": "1.2.15-build.20+sha.d4ac254",
     "angular-sanitize": "1.2.15-build.20+sha.d4ac254",
     "angular-mocks": "1.2.15-build.20+sha.d4ac254",
-    "bootstrap": "~3.1.0",
-    "font-awesome": "~4.0.3",
-    "angular-bootstrap": "latest",
-    "angular-highlightjs": "latest"
+    "ionic": "0.9.27"
   },
   "devDependencies": {},
   "resolutions": {
-    "angular-touch": "1.2.15-build.20+sha.d4ac254",
-    "angular": "1.2.15-build.20+sha.d4ac254"
+    "angular": "1.2.15-build.20+sha.d4ac254",
+    "angular-ui-router": "0.2.8-bowratic-tedium",
+    "angular-sanitize": "1.2.15-build.20+sha.d4ac254",
+    "angular-animate": "1.2.15-build.20+sha.d4ac254"
   }
 }

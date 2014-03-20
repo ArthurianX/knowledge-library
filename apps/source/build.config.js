@@ -64,47 +64,30 @@ module.exports = {
     //TODO: We will use primary_files as the array to load the main libraries, when the logic is done in Gruntfile.js
     primary_files: {
       js: [
-          'vendor/angular/angular.min.js'
+          'vendor/angular/angular.js'
       ]
     },
     vendor_files: {
         js: [
-            'vendor/angular/angular.min.js',
-            /* ABOVE are main files, for filtering and comparison we load them here first */
+            'vendor/angular/angular.js',
+            'vendor/ionic/release/js/ionic.js',
             'vendor/angular-animate/angular-animate.min.js',
-            'vendor/angular-cookie/angular-cookie.min.js',
             'vendor/angular-ui-router/release/angular-ui-router.min.js',
             'vendor/angular-ui-utils/modules/route/route.js',
-            'vendor/angular-promise-tracker/promise-tracker.js',
-            'vendor/angular-promise-tracker/promise-tracker-http-interceptor.js',
             'vendor/angular-sanitize/angular-sanitize.min.js',
-            'vendor/angular-rn-carousel/dist/angular-carousel.min.js',
-            'vendor/angular-ui-router-anim-in-out/anim-in-out.js',
-            'vendor/angular-touch/angular-touch.min.js',
-            'vendor/hammerjs/hammer.min.js',
-            'vendor/angular-hammer/angular-hammer.js',
-            'vendor/angular-bootstrap/ui-bootstrap.min.js',
-            'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
-            'customlibs/highlight/highlight.pack.js',
-            'vendor/angular-highlightjs/angular-highlightjs.min.js',
-
-
+            'vendor/ionic/release/js/ionic-angular.js'
         ],
         css: [
-            'vendor/bootstrap/dist/css/bootstrap.min.css',
-            'vendor/bootstrap/dist/css/bootstrap-theme.min.css',
-            'vendor/font-awesome/css/font-awesome.min.css',
-            'customlibs/highlight/monokai.css',
+            'vendor/ionic/release/css/ionic.css'
         ],
         assets: [
 
         ],
         fonts: [
-            'vendor/font-awesome/fonts/FontAwesome.otf',
-            'vendor/font-awesome/fonts/fontawesome-webfont.eot',
-            'vendor/font-awesome/fonts/fontawesome-webfont.svg',
-            'vendor/font-awesome/fonts/fontawesome-webfont.ttf',
-            'vendor/font-awesome/fonts/fontawesome-webfont.woff'
+            'vendor/ionic/release/fonts/ionicons.eot',
+            'vendor/ionic/release/fonts/ionicons.svg',
+            'vendor/ionic/release/fonts/ionicons.ttf',
+            'vendor/ionic/release/fonts/ionicons.woff'
         ]
     },
 };

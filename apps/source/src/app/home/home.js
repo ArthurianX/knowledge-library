@@ -1,27 +1,23 @@
-angular.module('zamolxian.home', [
-      'ui.router.state',
-      'ajoslin.promise-tracker'
-    ])
+angular.module('zamolxian.home', ['ionic'])
 
-/**
- * Each section or module of the site can also have its own routes. AngularJS
- * will handle ensuring they are all available at run-time, but splitting it
- * this way makes each module more "self-contained".
- */
     .config(function config($stateProvider) {
-      $stateProvider.state('home', {
-        url: '/home',
-        views: {
-          "main": {
-            controller: 'HomeCtrl',
-            templateUrl: 'home/home.tpl.html'
-          }
-        },
-        data: { pageTitle: 'Home' }
-      });
+        $stateProvider
+            .state('tab.home', {
+                url: '/home',
+                    /*controller: 'HomeCtrl',
+                    templateUrl: 'home/home.tpl.html'*/
+                views: {
+                    'home-tab': {
+                        controller: 'HomeCtrl',
+                        templateUrl: 'home/home.tpl.html'
+                    }
+                }
+            });
     })
 
-    .controller('HomeCtrl', function HomeController($scope, promiseTracker) {
+
+
+    .controller('HomeCtrl', function HomeController($scope) {
 
     })
 
