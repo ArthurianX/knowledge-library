@@ -14,6 +14,8 @@ angular.module('zamolxian', [
         'hljs',
         /*VVV App Config VVV*/
         'zamolxian.config',
+        /* Directives */
+        'zamolxian.directives',
         /*VVV PAGES VVV*/
         'zamolxian.home',
         'zamolxian.home-second',

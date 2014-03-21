@@ -53,33 +53,17 @@ angular.module('zamolxian.tutorials', [
         "priority" : 3,
         "content" : "Fusce diam est, porttitor vitae nulla non, dictum luctus ante. Vestibulum porta nisl vel justo iaculis consectetur. Morbi pellentesque vel sapien vehicula ultricies. Nam a posuere turpis. Nullam dictum augue metus, vitae suscipit metus porttitor id. Mauris lectus nisl, lacinia non sollicitudin sit amet, interdum ut mi. Proin euismod molestie dapibus. Ut dolor dolor, cursus in pretium eget, suscipit et lacus. Nulla vulputate lacinia dolor nec condimentum. Donec eget molestie ante, a luctus diam. In hac habitasse platea dictumst. Integer vitae purus ornare, tristique tellus vitae, facilisis orci. Aliquam erat volutpat. Aliquam magna dui, condimentum at orci eu, vestibulum dictum ipsum. Praesent nec convallis dui, sit amet lobortis enim.",
         "tags" : "default, tags"
+    },
+    {
+        "date" : "date today2",
+        "rating" : 2,
+        "link_to_tutorial" : "http://google.com",
+        "source" : "src",
+        "comments" : "comm",
+        "title" : "Title 4",
+        "priority" : 3,
+        "content" : "Fusce diesque vel sapien vehicula ultricies. Nam a posuere turpis. Nullam dictum augue metus, vitae suscipit metus ptudin sit amet, interdum uts. Ut dolor dolor, cursus in pretium eget, suscipit et lacus. Nulla vulputate lacinia dolor nec condimentum. Donec eget molestie ante, a luctus diam. In hac habitasse platea dictumst. Integer vitae purus ornare, tristique tellus vitae, facilisis orci. Aliquam erat volutpat. Aliquam magna dui, condimentum at orci eu, vestibulum dictum ipsum. Praesent nec convallis dui, sit amet lobortis enim.",
+        "tags" : "default, tags"
     }
     ];
-})
-
-.directive('card', function() {
-    return {
-        restrict: 'EA',
-        require: '^tutorial',
-        scope: {
-            tutorial: '='
-        },
-        template: '' +
-            '<h2>{{tutorial.title}}</h2>' +
-            '<p>{{tutorial.content}}</p>' +
-            '<label>Rate</label><span><rating value="tutorial.rating" max="10" readonly="false" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating></span>' +
-            '<br>' +
-            '<button class="btn btn-default btn-lg">' +
-            '<span class="glyphicon glyphicon-refresh"></span>' +
-            'Read later' +
-            '</button>' +
-            '<button class="btn btn-default btn-lg">' +
-                '<span class="glyphicon glyphicon-thumbs-up"></span>' +
-            'Like' +
-            '</button>' +
-            '<button class="btn btn-default btn-lg">' +
-            '<span class="glyphicon glyphicon-share"></span>' +
-            'Share' +
-            '</button>'
-    };
 });

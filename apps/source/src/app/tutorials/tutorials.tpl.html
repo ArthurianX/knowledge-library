@@ -3,9 +3,10 @@
         <div class="jumbotron">
             <h1>Tutorials</h1>
         </div>
+        Search <input type="text" ng-model="search">
         <div class="row">
-            <div class="card col-md-4" ng-repeat="tutorial in tutorials">
-                <card tutorial="tutorial"></card>
+            <div class="col-md-4" ng-repeat="tutorial in tutorials | filter:search" ng-animate=" 'animate' ">
+                <card></card>
             </div>
         </div>
     </div>
