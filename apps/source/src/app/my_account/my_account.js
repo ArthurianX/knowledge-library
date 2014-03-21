@@ -23,6 +23,7 @@ angular.module('zamolxian.my_account', [
             $scope.userMail = "gbora@pititechnologies.ro";
 
             $scope.countryList = countryListing.countryList;
+            $scope.userCountry = $scope.countryList[89];
 
             $scope.contactZalmoxis = function() {
                    $scope.userName = $sanitize($scope.newUserName);

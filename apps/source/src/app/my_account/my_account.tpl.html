@@ -107,11 +107,10 @@
                             <p class="bg-danger"> Google couldn't find your county.</p>
                         </div>
 
-                        <div>
-                            <select>
-                                <option ng-repeat="country in countryList" value="{{country.name}}">
-                                    {{country.name}}
-                                </option>
+                        <div class="input-group">
+                            <div class="input-group-addon">Country</div>
+                            <select class="form-control" ng-options="c.name for c in countryList"  ng-model="userCountry">
+
                             </select>
                         </div>
 
