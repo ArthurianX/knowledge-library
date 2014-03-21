@@ -12,6 +12,7 @@ angular.module('zamolxian', [
 //        'listingCommunity',
 //        'listingDocumentation',
 //        'listingModules',
+        'listingCountry',
         'ngTouch',
         /*VVV Providers VVV*/
         "zalmoxian.providers",
