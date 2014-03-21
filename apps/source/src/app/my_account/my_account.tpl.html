@@ -52,7 +52,7 @@
                                    placeholder="John">
                         </div>
 
-                        <div ng-show="contactData.FirstName.length < 5 || contactData.FirstName.length > 30">
+                        <div ng-show="errorList['firstName'] === true">
                             <p class="bg-danger"> First name must have between 5 and 30 characters.</p>
                         </div>
 
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">Mail</div>
+                            <div class="input-group-addon">Phone Number</div>
                             <input type="text" class="form-control col-md-2 " ng-model="contactData.Phone"
                                    placeholder="Phone Number">
                         </div>
@@ -115,6 +115,19 @@
                         </div>
 
 
+                        <div class="input-group">
+                            <div class="input-group-addon">Motive</div>
+                            <select class="form-control" ng-options="m.name for m in motivesList"  ng-model="selectedMotive">
+
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-addon">{{selectedMotive.name}}</div>
+                            <select class="form-control" ng-options="o.name for o in selectedMotive.options" ng-model="selectedUlteriorMotive">
+
+                            </select>
+                        </div>
 
 
 
