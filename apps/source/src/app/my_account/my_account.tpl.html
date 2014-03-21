@@ -119,39 +119,33 @@
 
                         <div class="input-group">
                             <div class="input-group-addon">Country</div>
-                            <select class="form-control" ng-options="c.name for c in countryList"  ng-model="userCountry">
+                            <select class="form-control" ng-options="c.name for c in countryList"
+                                    ng-model="userCountry">
 
                             </select>
                         </div>
 
-
                         <div class="input-group">
                             <div class="input-group-addon">Motive</div>
-                            <select class="form-control" ng-options="m.name for m in motivesList"  ng-model="selectedMotive">
+                            <select class="form-control" ng-options="m.name for m in motivesList"
+                                    ng-model="selectedMotive">
 
                             </select>
                         </div>
 
                         <div class="input-group">
                             <div class="input-group-addon">{{selectedMotive.name}}</div>
-                            <select class="form-control" ng-options="o.name for o in selectedMotive.options" ng-model="selectedUlteriorMotive">
+                            <select class="form-control" ng-options="o.name for o in selectedMotive.options"
+                                    ng-model="selectedUlteriorMotive">
 
                             </select>
                         </div>
-
-
-
-
                     </div>
-
 
                     <div class="col-md-10  btn-upd">
                         <button class="btn btn-primary" ng-click="contactZalmoxis();"> Contact the Team</button>
                     </div>
-
-
                 </div>
-
             </form>
         </div>
     </div>

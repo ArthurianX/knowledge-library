@@ -22,7 +22,6 @@ angular.module('zamolxian.my_account', [
         $scope.userName = "George Bora";
         $scope.userMail = "gbora@pititechnologies.ro";
 
-
         $scope.motivesList = [
             { "name": "Hire Me Pls", "options": [
                 {"name": "Web Developer"},
