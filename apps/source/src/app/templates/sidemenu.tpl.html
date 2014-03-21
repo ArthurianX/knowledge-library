@@ -1,0 +1,31 @@
+<ion-side-menus>
+
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar type="bar-positive"> </ion-nav-bar>
+        <ion-nav-view name="topView"></ion-nav-view>
+    </ion-pane>
+
+    <ion-side-menu side="left">
+        <!--<header class="bar bar-header bar-assertive">
+            <div class="title">Left Menu</div>
+        </header>-->
+        <ion-content has-header="true" padding="true">
+            <ul class="list">
+
+                <a ng-class="{active: isItemActive('/sidemenu/home')}" href="#/sidemenu/home" class="item">Home</a>
+                <a ng-class="{active: isItemActive('/sidemenu/docs')}" href="#/sidemenu/docs" class="item">Official Docs</a>
+                <a ng-class="{active: isItemActive('/sidemenu/tutorials')}" href="#/sidemenu/tutorials" class="item">Tutorials</a>
+                <a ng-class="{active: isItemActive('/sidemenu/community')}" href="#/sidemenu/community" class="item">Community</a>
+                <a ng-class="{active: isItemActive('/sidemenu/tips')}" href="#/sidemenu/tips" class="item">Tips &amp; Tricks</a>
+                <a ng-class="{active: isItemActive('/sidemenu/modules')}" href="#/sidemenu/modules" class="item">Modules &amp; Updates</a>
+                <a ng-class="{active: isItemActive('/sidemenu/reading')}" href="#/sidemenu/reading" class="item">Reading Lists</a>
+                <a ng-class="{active: isItemActive('/sidemenu/books')}" href="#/sidemenu/books" class="item">Books</a>
+                <a ng-class="{active: isItemActive('/sidemenu/irc')}" href="#/sidemenu/irc" class="item">IRC Channel</a>
+                <a ng-class="{active: isItemActive('/sidemenu/settings')}" href="#/sidemenu/settings" class="item">Settings</a>
+                <a ng-class="{active: isItemActive('/sidemenu/myaccount')}" href="#/sidemenu/myaccount" class="item">My Account</a>
+
+            </ul>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

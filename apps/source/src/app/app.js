@@ -12,62 +12,18 @@ angular.module('zamolxian', [
 
     .config(function($stateProvider, $urlRouterProvider) {
 
-        // Ionic uses AngularUI Router which uses the concept of states
-        // Learn more here: https://github.com/angular-ui/ui-router
-        // Set up the various states which the app can be in.
-        // Each state's controller can be found in controllers.js
         $stateProvider
-
-            // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: "/tab",
+            // setup an abstract state for the sidemenu directive
+            .state('sidemenu', {
+                url: "/sidemenu",
                 abstract: true,
-                templateUrl: "templates/tabs.tpl.html"
-            })
-
-            // the pet tab has its own child nav-view and history
-            .state('tab.pet-index', {
-                url: '/pets',
-                views: {
-                    'pets-tab': {
-                        templateUrl: 'templates/pet-index.tpl.html',
-                        controller: 'PetIndexCtrl'
-                    }
-                }
-            })
-
-            .state('tab.pet-detail', {
-                url: '/pet/:petId',
-                views: {
-                    'pets-tab': {
-                        templateUrl: 'templates/pet-detail.tpl.html',
-                        controller: 'PetDetailCtrl'
-                    }
-                }
-            })
-
-            .state('tab.adopt', {
-                url: '/adopt',
-                views: {
-                    'adopt-tab': {
-                        templateUrl: 'templates/adopt.tpl.html'
-                    }
-                }
-            })
-
-            .state('tab.about', {
-                url: '/about',
-                views: {
-                    'about-tab': {
-                        templateUrl: 'templates/about.tpl.html'
-                    }
-                }
+                templateUrl: "templates/sidemenu.tpl.html"
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/home');
+        $urlRouterProvider.otherwise('/sidemenu/home');
 
-    });
+    })
 
     /*.config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $anchorScrollProvider) {
         $locationProvider.html5Mode(true).hashPrefix('!');
@@ -93,13 +49,15 @@ angular.module('zamolxian', [
 
     })*/
 
-    /*.controller('AppCtrl', function AppCtrl($scope, $location, $stateParams) {
+    .controller('AppCtrl', function AppCtrl($scope, $location, $stateParams) {
+        //Get active menu
+        $scope.isItemActive = function(item) {
+            return $location.path().indexOf(item) > -1;
+        };
 
-        $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-            if (angular.isDefined(toState.data.pageTitle)) {
-                $scope.pageTitle = toState.data.pageTitle + ' | Articulate Angular';
-            }
-        });
+        $scope.greeting = 'Welcome';
+
+
 
     })
-;*/
+;
