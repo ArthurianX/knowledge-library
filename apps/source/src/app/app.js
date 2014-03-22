@@ -8,9 +8,21 @@ angular.module('zamolxian', [
         /*VVV Providers VVV*/
         'zamolxian.authorization',
         'zamolxian.userinfo',
+        /*VVV Factories VVV*/
+        'zamolxian.globalnotification',
+        'zamolxian.usernotification',
+        'zamolxian.listingfactory',
         /*VVV Services VVV*/
-        'zamolxian.services',
+        'zamolxian.achievements',
+        'zamolxian.coaching',
+        'zamolxian.context',
+        'zamolxian.listing',
+        'zamolxian.notification',
+        'zamolxian.preferences',
+        'zamolxian.search',
+        'zamolxian.statistics',
         /*VVV Directives VVV*/
+        //
         /*VVV Pages VVV*/
         'zamolxian.home',
         'zamolxian.docs',
@@ -22,7 +34,7 @@ angular.module('zamolxian', [
         'zamolxian.books',
         'zamolxian.irc',
         'zamolxian.settings',
-        'zamolxian.myaccount',
+        'zamolxian.myaccount'
 
     ])
 
