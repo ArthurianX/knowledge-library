@@ -3,10 +3,26 @@ angular.module('zamolxian', [
         'templates-common',
         /*VVV App Config VVV*/
         'zamolxian.config',
+        /*VVV Ionic VVV*/
         'ionic',
+        /*VVV Providers VVV*/
+        'zamolxian.authorization',
+        'zamolxian.userinfo',
+        /*VVV Services VVV*/
         'zamolxian.services',
-        'zamolxian.controllers',
-        'zamolxian.home'
+        /*VVV Directives VVV*/
+        /*VVV Pages VVV*/
+        'zamolxian.home',
+        'zamolxian.docs',
+        'zamolxian.tutorials',
+        'zamolxian.community',
+        'zamolxian.tips',
+        'zamolxian.modules',
+        'zamolxian.reading',
+        'zamolxian.books',
+        'zamolxian.irc',
+        'zamolxian.settings',
+        'zamolxian.myaccount',
 
     ])
 
