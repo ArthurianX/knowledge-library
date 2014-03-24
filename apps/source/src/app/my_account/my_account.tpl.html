@@ -84,8 +84,8 @@
                                    placeholder="Phone Number">
                         </div>
 
-                        <div ng-show="contactData.Phone.length < 10 || contactData.Phone.length > 13">
-                            <p class="bg-danger"> Must be valid phone number (depends on country).</p>
+                        <div ng-show="errorList.phone">
+                            <p class="bg-danger">Must be valid phone number (depends on country).</p>
                         </div>
 
                         <div class="input-group">
@@ -104,7 +104,7 @@
                         <div class="input-group">
                             <div class="input-group-addon">Country</div>
                             <select class="form-control" ng-options="c.name for c in countryList"
-                                    ng-model="userCountry">
+                                    ng-model="userCountry" ng-change="isValidPhoneNr(contactData.Phone, userCountry.alpha)">
                             </select>
                         </div>
 

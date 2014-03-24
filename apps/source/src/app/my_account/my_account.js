@@ -2,7 +2,8 @@ angular.module('zamolxian.my_account', [
         'ui.router.state',
         'ajoslin.promise-tracker',
         "listingCountry",
-        'ngSanitize'
+        'ngSanitize',
+        'zamolxian.phone-service'
 ])
 
 .config(function config($stateProvider) {
@@ -18,7 +19,7 @@ angular.module('zamolxian.my_account', [
     });
 })
 
-.controller("AccountCtrl", function AccountCtrl($scope, promiseTracker, $sanitize, countryListing) {
+.controller("AccountCtrl", function AccountCtrl($scope, promiseTracker, $sanitize, countryListing, PhoneService) {
     $scope.userName = "George Bora";
     $scope.userMail = "gbora@pititechnologies.ro";
     $scope.result = {};
@@ -51,8 +52,8 @@ angular.module('zamolxian.my_account', [
     $scope.countryList = countryListing.countryList;
     $scope.userCountry = $scope.countryList[89];
 
-    // I intialize all the error to false
-    $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phoneNumber": false, "address": false, "country": false};
+    // intialize all the errors to false
+    $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phone": false, "address": false, "country": false};
 
     $scope.contactZalmoxis = function () {
         $scope.contact = false;
@@ -61,14 +62,18 @@ angular.module('zamolxian.my_account', [
     $scope.geocode = function(address) {
         geocoder.geocode({'address': address}, function(results, status) {
             if(status == google.maps.GeocoderStatus.OK) {
-                console.log("OK");
                 $scope.errorList.address = false;
                 $scope.result.address = results[0];
-                console.log($scope.result.address.formatted_address);
             } else {
-                console.log("NOT FOUND = ERROR");
                 $scope.errorList.address = true;
             }
+        });
+    };
+
+    $scope.isValidPhoneNr = function(phoneNr, countryCode) {
+        PhoneService.isValidPhoneNr(phoneNr, countryCode)
+        .then(function(data) {
+            $scope.errorList.phone = !data;
         });
     };
 });
