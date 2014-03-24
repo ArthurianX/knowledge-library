@@ -94,7 +94,10 @@
                                    placeholder="Your address" ng-change="geocode(contactData.address)">
                         </div>
 
-                        <div ng-show="errorList.address">
+                        <div ng-if="!errorList.address">
+                            <p class="bg-info">{{result.address.formatted_address}}</p>
+                        </div>
+                        <div ng-if="errorList.address">
                             <p class="bg-danger">Google couldn't find your address.</p>
                         </div>
 

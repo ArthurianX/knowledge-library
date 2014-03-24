@@ -21,6 +21,7 @@ angular.module('zamolxian.my_account', [
 .controller("AccountCtrl", function AccountCtrl($scope, promiseTracker, $sanitize, countryListing) {
     $scope.userName = "George Bora";
     $scope.userMail = "gbora@pititechnologies.ro";
+    $scope.result = {};
 
     $scope.motivesList = [
         { "name": "Hire Me Pls", "options": [
@@ -62,6 +63,8 @@ angular.module('zamolxian.my_account', [
             if(status == google.maps.GeocoderStatus.OK) {
                 console.log("OK");
                 $scope.errorList.address = false;
+                $scope.result.address = results[0];
+                console.log($scope.result.address.formatted_address);
             } else {
                 console.log("NOT FOUND = ERROR");
                 $scope.errorList.address = true;
