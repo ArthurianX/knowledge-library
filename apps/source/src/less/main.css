@@ -1,0 +1,532 @@
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
+/**
+ * These are the variables used throughout the application. This is where 
+ * overwrites that are not specific to components should be maintained.
+ */
+/**
+ * Typography-related.
+ */
+/* UI VIEW ANIMATIONS */
+/* line 10, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in-setup.anim-fade,
+.anim-in-out.anim-in-setup .anim-fade {
+  opacity: 0;
+}
+/* line 14, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in-setup.anim-slide-below,
+.anim-in-out.anim-in-setup .anim-slide-below {
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  transform: translateY(20px);
+}
+/* line 18, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in-setup.anim-slide-below-fade,
+.anim-in-out.anim-in-setup .anim-slide-below-fade {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  transform: translateY(20px);
+}
+/* line 23, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in-setup.anim-zoom-in,
+.anim-in-out.anim-in-setup .anim-zoom-in {
+  -webkit-transform: scale(0.95, 0.95);
+  -moz-transform: scale(0.95, 0.95);
+  -ms-transform: scale(0.95, 0.95);
+  -o-transform: scale(0.95, 0.95);
+  transform: scale(0.95, 0.95);
+}
+/* line 27, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in-setup.anim-zoom-out,
+.anim-in-out.anim-in-setup .anim-zoom-out {
+  -webkit-transform: scale(1.025, 1.025);
+  -moz-transform: scale(1.025, 1.025);
+  -ms-transform: scale(1.025, 1.025);
+  -o-transform: scale(1.025, 1.025);
+  transform: scale(1.025, 1.025);
+}
+/* line 38, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in.anim-fade,
+.anim-in-out.anim-in .anim-fade {
+  opacity: 1;
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 43, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in.anim-slide-below,
+.anim-in-out.anim-in .anim-slide-below {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 48, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in.anim-slide-below-fade,
+.anim-in-out.anim-in .anim-slide-below-fade {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 54, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in.anim-zoom-in,
+.anim-in-out.anim-in .anim-zoom-in {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 59, ../scss/anim-in-out.scss */
+.anim-in-out.anim-in.anim-zoom-out,
+.anim-in-out.anim-in .anim-zoom-out {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 71, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out-setup.anim-fade,
+.anim-in-out.anim-out-setup .anim-fade {
+  opacity: 1;
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 76, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out-setup.anim-slide-below,
+.anim-in-out.anim-out-setup .anim-slide-below {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 81, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out-setup.anim-slide-below-fade,
+.anim-in-out.anim-out-setup .anim-slide-below-fade {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 87, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out-setup.anim-zoom-in,
+.anim-in-out.anim-out-setup .anim-zoom-in {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 92, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out-setup.anim-zoom-out,
+.anim-in-out.anim-out-setup .anim-zoom-out {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 101, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out.anim-swap,
+.anim-in-out.anim-out .anim-swap {
+  display: none;
+}
+/* line 105, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out.anim-fade,
+.anim-in-out.anim-out .anim-fade {
+  opacity: 0;
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 110, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out.anim-slide-below,
+.anim-in-out.anim-out .anim-slide-below {
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 115, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out.anim-slide-below-fade,
+.anim-in-out.anim-out .anim-slide-below-fade {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 121, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out.anim-zoom-in,
+.anim-in-out.anim-out .anim-zoom-in {
+  -webkit-transform: scale(0.95, 0.95);
+  -moz-transform: scale(0.95, 0.95);
+  -ms-transform: scale(0.95, 0.95);
+  -o-transform: scale(0.95, 0.95);
+  transform: scale(0.95, 0.95);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* line 126, ../scss/anim-in-out.scss */
+.anim-in-out.anim-out.anim-zoom-out,
+.anim-in-out.anim-out .anim-zoom-out {
+  -webkit-transform: scale(1.025, 1.025);
+  -moz-transform: scale(1.025, 1.025);
+  -ms-transform: scale(1.025, 1.025);
+  -o-transform: scale(1.025, 1.025);
+  transform: scale(1.025, 1.025);
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+}
+/* NG REPEATS ANIMATION */
+.animate-repeat {
+  -webkit-tap-highlight-color: #4577bb;
+}
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition: all 0.7s cubic-bezier(0.79, 0.33, 0.94, 0.17);
+  transition: all 0.7s cubic-bezier(0.79, 0.33, 0.94, 0.17);
+}
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity: 0;
+  left: -50%;
+  width: 30%;
+}
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity: 1;
+  left: 0;
+  width: 100%;
+}
+.rn-carousel-container {
+  overflow: hidden;
+}
+.rn-carousel-slides {
+  position: relative;
+  white-space: nowrap;
+  overflow: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  padding: 0;
+  margin: 0;
+}
+.rn-carousel-slide {
+  white-space: normal;
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.rn-carousel-indicator {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  height: 20px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.rn-carousel-indicator span {
+  padding: 0 5px;
+  color: #333;
+  -webkit-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
+}
+.rn-carousel-indicator .active {
+  color: #ffffff;
+}
+nav {
+  height: 50px;
+}
+/* Code Starts here */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif, Arial;
+  font-weight: 400;
+}
+/* Code highlighter Styles Overwrite to the monokai theme */
+pre {
+  background-color: #23241f;
+  color: #f8f8f2;
+}
+/*
+VARS
+*/
+/*=============================================
+========= HomePage Styles.  //TODO: Move some of these in the GENERAL STYLES AFTER DEV.
+==============================================*/
+.home-page {
+  background-color: #1ABC9C;
+}
+.home-page .navigation .logo {
+  float: left;
+  padding: 6px 0 0 30px;
+}
+.home-page .navigation .logo img {
+  width: 45px;
+}
+.home-page .navigation .nav {
+  padding: 9px 20px 0 0px;
+  float: right;
+}
+.home-page .navigation li.active a {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.home-page .navigation li a {
+  color: #fff;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+  padding: 6px 15px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+.home-page .navigation li a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.home-page .header {
+  height: 400px;
+  display: block;
+  width: 100%;
+  border-top: 1px solid #1ccdaa;
+  background: transparent url(green_pattern.png) repeat top center;
+  background-size: 25%;
+  position: relative;
+  border-bottom: 5px solid #1ccdaa;
+  color: #2c3e50;
+}
+.home-page .header h1 {
+  text-align: center;
+  color: #fff;
+}
+.home-page .header h2 {
+  text-align: center;
+  color: #bdc3c7;
+}
+.home-page .header .tagline {
+  position: absolute;
+  bottom: 135px;
+}
+.home-page .header .well {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  width: 225px;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 0px solid #fff;
+  box-shadow: 0 0 0 #fff;
+}
+.home-page .header .well .btn-success {
+  background-color: #34495E;
+  background-image: none;
+  box-shadow: 0 0 0 #fff;
+  border: 0px solid #fff;
+}
+.home-page .header .well .btn-default {
+  box-shadow: 0 0 0 #fff;
+  border: 0px solid #fff;
+}
+.home-page .header .stats {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  width: 455px;
+}
+.home-page .header .round-separator {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  margin: 0 0 -100px -100px;
+  background: #ecf0f1 url(square-pattern.png) repeat top center;
+  border-radius: 125px;
+  padding: 7px 5px 0px 5px;
+  box-shadow: inset 0 0 4px #000000, 0 0 0px 5px #1ccdaa;
+}
+.home-page .header .round-separator img {
+  width: 100%;
+}
+.home-page .homepage {
+  background-color: #fff;
+}
+.home-page .homepage .fourpins {
+  min-height: 150px;
+  background: #34495e url(square-pattern.png) repeat top center;
+  padding: 30px;
+}
+.home-page .homepage .fourpins .col-md-3 {
+  min-height: 50px;
+  padding: 70px 15px 5px 15px;
+  text-align: left;
+}
+.home-page .homepage .fourpins .col-md-3 .icon {
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+}
+.home-page .homepage .fourpins .col-md-3 .icon .fa {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.home-page .homepage .fourpins .col-md-3 .description {
+  color: #ecf0f1;
+}
+.home-page .homepage .fourpins .col-md-3 .description .strike {
+  text-decoration: line-through;
+}
+.home-page .homepage .fourpins .col-md-3:nth-child(3),
+.home-page .homepage .fourpins .col-md-3:nth-child(4) {
+  text-align: right;
+}
+.home-page .homepage .advantage {
+  padding: 20px;
+  min-height: 150px;
+  background-color: #fff;
+  position: relative;
+  border-bottom: 1px solid #bdc3c7;
+}
+.home-page .homepage .advantage:nth-child(2n+1) {
+  background-color: #ecf0f1;
+  text-align: right;
+}
+.home-page .homepage .advantage .icon {
+  text-align: center;
+}
+.home-page .homepage .advantage .icon .fa {
+  font-size: 40px;
+}
+.home-page .homepage .advantage .icon h3 {
+  text-align: center;
+}
+/*
+  Color Pattern
+
+
+
+*/
+/**
+ * Now that all app-wide styles have been applied, we can load the styles for
+ * all the submodules and components we are using. 
+ *
+ * TODO: In a later version of this boilerplate, I'd like to automate this.
+ */
+.card-style {
+  border: 1px solid #000000;
+  padding: 5px;
+  margin: 5px;
+}
+.animate-enter,
+.animate-leave {
+  -webkit-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -moz-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -ms-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -o-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  position: relative;
+  display: block;
+}
+.animate-enter.animate-enter-active,
+.animate-leave {
+  opacity: 1;
+  top: 0;
+  height: 30px;
+}
+.animate-leave.animate-leave-active,
+.animate-enter {
+  opacity: 0;
+  top: -50px;
+  height: 0px;
+}
+.account-form {
+  text-align: center;
+}
+.form-row {
+  width: 200px;
+}
+.form-label {
+  min-width: 200px;
+}
+.form-input {
+  width: 50%;
+}
+.input-group {
+  margin: 5px;
+}

@@ -46,11 +46,11 @@
         <div class="well col-md-4 col-md-offset-5">
             <form novalidate="true">
                 <div class="row-fluid">
-                    <div class="form-group">
+                    <div class="form-group account-form">
                         <div class="input-group">
-                            <div class="input-group-addon">First Name</div>
+                            <div class="input-group-addon form-label">First Name</div>
                             <input type="text" class="form-control col-md-2 " ng-model="contactData.FirstName"
-                                   placeholder="John">
+                                   placeholder="Charlie">
                         </div>
 
                         <div ng-show="errorList['firstName'] === true">
@@ -58,20 +58,19 @@
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">Last Name</div>
+                            <div class="input-group-addon form-label">Last Name</div>
                             <input type="text" class="form-control col-md-2 " ng-model="contactData.LastName"
-                                   placeholder="Smith">
+                                   placeholder="Chaplin">
                         </div>
 
                         <div ng-show="contactData.LastName.length < 5 || contactData.LastName.length > 30">
                             <p class="bg-danger"> Last Name must have between 5 and 30 characters.</p>
                         </div>
 
-
                         <div class="input-group">
-                            <div class="input-group-addon">Mail</div>
-                            <input type="text" class="form-control col-md-2 " ng-model="contactData.Mail"
-                                   placeholder="Your e-mail adress">
+                            <div class="input-group-addon form-label">Mail</div>
+                            <input type="text" class="form-control col-md-2 form-input" ng-model="contactData.Mail"
+                                   placeholder="Your email address">
                         </div>
 
                         <div ng-show="contactData.Mail.length < 5 || contactData.Mail.length > 30">
@@ -79,7 +78,7 @@
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">Phone Number</div>
+                            <div class="input-group-addon form-label">Phone Number</div>
                             <input type="text" class="form-control col-md-2 " ng-model="contactData.Phone"
                                    placeholder="Phone Number">
                         </div>
@@ -89,34 +88,32 @@
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">Address</div>
-                            <input type="text" class="form-control col-md-2 " ng-model="contactData.address"
+                            <div class="input-group-addon form-label">Address</div>
+                            <input type="text" class="form-control col-md-2" ng-model="contactData.address"
                                    placeholder="Your address" ng-change="geocode(contactData.address)">
                         </div>
 
-                        <div ng-if="!errorList.address">
-                            <p class="bg-info">{{result.address.formatted_address}}</p>
-                        </div>
-                        <div ng-if="errorList.address">
-                            <p class="bg-danger">Google couldn't find your address.</p>
+                        <div ng-show="contactData.address != ''">
+                            <p ng-show="errorList.address == false" class="bg-info">{{result.address.formatted_address}}</p>
+                            <p ng-show="errorList.address" class="bg-danger">Google couldn't find your address.</p>
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">Country</div>
+                            <div class="input-group-addon form-label">Country</div>
                             <select class="form-control" ng-options="c.name for c in countryList"
                                     ng-model="userCountry" ng-change="isValidPhoneNr(contactData.Phone, userCountry.alpha)">
                             </select>
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">Motive</div>
+                            <div class="input-group-addon form-label">Motive</div>
                             <select class="form-control" ng-options="m.name for m in motivesList"
                                     ng-model="selectedMotive">
                             </select>
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">{{selectedMotive.name}}</div>
+                            <div class="input-group-addon form-label">{{selectedMotive.name}}</div>
                             <select class="form-control" ng-options="o.name for o in selectedMotive.options"
                                     ng-model="selectedUlteriorMotive">
                             </select>

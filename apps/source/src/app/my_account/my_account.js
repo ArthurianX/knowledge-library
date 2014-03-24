@@ -53,7 +53,7 @@ angular.module('zamolxian.my_account', [
     $scope.userCountry = $scope.countryList[89];
 
     // intialize all the errors to false
-    $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phone": false, "address": false, "country": false};
+    $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phone": false, "address": undefined, "country": false};
 
     $scope.contactZalmoxis = function () {
         $scope.contact = false;
