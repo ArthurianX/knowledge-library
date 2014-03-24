@@ -89,9 +89,7 @@ module.exports = {
             'vendor/firebase/firebase.js',
             'vendor/angularfire/angularfire.min.js',
             'customlibs/highlight/highlight.pack.js',
-            'vendor/angular-highlightjs/angular-highlightjs.min.js',
-
-
+            'vendor/angular-highlightjs/angular-highlightjs.min.js'
         ],
         css: [
             'vendor/bootstrap/dist/css/bootstrap.min.css',

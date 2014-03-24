@@ -1,3 +1,4 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <div ng-controller="AccountCtrl">
 
 
@@ -83,45 +84,24 @@
                                    placeholder="Phone Number">
                         </div>
 
-                        <div ng-show="contactData.Phone.length < 5 || contactData.Phone.length > 30">
+                        <div ng-show="contactData.Phone.length < 10 || contactData.Phone.length > 13">
                             <p class="bg-danger"> Must be valid phone number (depends on country).</p>
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">Adress</div>
-                            <input type="text" class="form-control col-md-2 " ng-model="contactData.Adress"
-                                   placeholder="Your adress">
+                            <div class="input-group-addon">Address</div>
+                            <input type="text" class="form-control col-md-2 " ng-model="contactData.address"
+                                   placeholder="Your address" ng-change="geocode(contactData.address)">
                         </div>
 
-                        <div ng-show="contactData.Adress.length < 5 || contactData.Adress.length > 30">
-                            <p class="bg-danger"> Google couldn't find your adress.</p>
-                        </div>
-
-                        <div class="input-group">
-                            <div class="input-group-addon">City</div>
-                            <input type="text" class="form-control col-md-2 " ng-model="contactData.City"
-                                   placeholder="Your city">
-                        </div>
-
-                        <div ng-show="contactData.City.length < 3 || contactData.City.length > 30">
-                            <p class="bg-danger"> Google couldn't find your city.</p>
-                        </div>
-
-                        <div class="input-group">
-                            <div class="input-group-addon">County</div>
-                            <input type="text" class="form-control col-md-2 " ng-model="contactData.County"
-                                   placeholder="Your county">
-                        </div>
-
-                        <div ng-show="contactData.County.length < 5 || contactData.County.length > 30">
-                            <p class="bg-danger"> Google couldn't find your county.</p>
+                        <div ng-show="errorList.address">
+                            <p class="bg-danger">Google couldn't find your address.</p>
                         </div>
 
                         <div class="input-group">
                             <div class="input-group-addon">Country</div>
                             <select class="form-control" ng-options="c.name for c in countryList"
                                     ng-model="userCountry">
-
                             </select>
                         </div>
 
@@ -129,7 +109,6 @@
                             <div class="input-group-addon">Motive</div>
                             <select class="form-control" ng-options="m.name for m in motivesList"
                                     ng-model="selectedMotive">
-
                             </select>
                         </div>
 
@@ -137,7 +116,6 @@
                             <div class="input-group-addon">{{selectedMotive.name}}</div>
                             <select class="form-control" ng-options="o.name for o in selectedMotive.options"
                                     ng-model="selectedUlteriorMotive">
-
                             </select>
                         </div>
                     </div>
