@@ -20,7 +20,8 @@
     "bootstrap": "~3.1.0",
     "font-awesome": "~4.0.3",
     "angular-bootstrap": "latest",
-    "angular-highlightjs": "latest"
+    "angular-highlightjs": "latest",
+    "gmaps": "~0.4.11"
   },
   "devDependencies": {},
   "resolutions": {
