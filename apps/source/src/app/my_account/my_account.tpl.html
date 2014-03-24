@@ -44,7 +44,7 @@
         <div class="well col-md-4 col-md-offset-5">
             <form novalidate="true">
                 <div class="row-fluid">
-                    <div class="form-group">
+                    <div class="form-group biginputgroups">
                         <div class="input-group">
                             <div class="input-group-addon addon-zal">First Name</div>
                             <input type="text" class="form-control col-md-2 " ng-model="cdFirstName"
@@ -128,7 +128,7 @@
                         </div>
 
                         <div class="input-group">
-                            <div class="input-group-addon">{{selectedMotive.name}}</div>
+                            <div class="input-group-addon  addon-zal">{{selectedMotive.name}}</div>
                             <select class="form-control" ng-options="o.name for o in selectedMotive.options" ng-model="selectedUlteriorMotive">
 
                             </select>
