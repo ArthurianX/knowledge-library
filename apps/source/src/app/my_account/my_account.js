@@ -53,18 +53,24 @@ angular.module('zamolxian.my_account', [
     $scope.userCountry = $scope.countryList[89];
 
     // intialize all the errors to false
-    $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phone": false, "address": undefined, "country": false};
+    $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phone": undefined, "address": undefined, "country": false};
 
     $scope.contactZalmoxis = function () {
         $scope.contact = false;
     };
 
     $scope.geocode = function(address) {
+        console.log("in geocode function...");
+        console.log(address);
         geocoder.geocode({'address': address}, function(results, status) {
+            console.log("in geocoder geocode function");
             if(status == google.maps.GeocoderStatus.OK) {
+                console.log("address found");
+                console.log(results);
                 $scope.errorList.address = false;
                 $scope.result.address = results[0];
             } else {
+                console.log("address not found");
                 $scope.errorList.address = true;
             }
         });
