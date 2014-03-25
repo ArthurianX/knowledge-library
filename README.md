@@ -32,3 +32,16 @@ $ sudo a2enmod rewrite
 ```
 
 ###NodeJS
+```
+$ sudo apt-get install nodejs
+```
+Optionally
+```
+$ sudo ln -s /usr/bin/nodejs /usr/bin/node
+```
+```
+$ sudo npm -g install grunt-cli karma bower
+$ npm install
+$ bower install
+$ grunt watch
+```
