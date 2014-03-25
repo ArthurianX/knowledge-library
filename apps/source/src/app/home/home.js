@@ -1,6 +1,5 @@
 angular.module('zamolxian.home', [
-    'ui.router.state',
-    'ajoslin.promise-tracker'
+    'ui.router.state'
 ])
 
 .config(function config($stateProvider) {
@@ -16,11 +15,11 @@ angular.module('zamolxian.home', [
     });
 })
 
-.controller("HomeCtrl", function HomeCtrl($scope, promiseTracker, factoryProvider) {
+.controller("HomeCtrl", function HomeCtrl($scope, factoryProvider) {
         $scope.data = factoryProvider.FactoryProvider();
-        for (var id in $scope.data.readingList.$getIndex()) {
-            console.log(id);
-        }
-        console.log($scope.data.readingList);
+//        for (var id in $scope.data.readingList.$getIndex()) {
+//            console.log(id);
+//        }
+//        console.log($scope.data.readingList);
 
 });
