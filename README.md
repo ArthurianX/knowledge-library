@@ -8,7 +8,7 @@ WebApp with documentation, tutorials and community around a select topic/framewo
 ###Apache2
 
 ####Install service
-`sudo apt-get update
+`sudo apt-get update  
  sudo apt-get install apache2`
 
 ####Add server name
