@@ -76,9 +76,11 @@
 
                         <div class="input-group">
                             <div class="input-group-addon form-label">
-                                Phone <span ng-show="errorList.phone == false" class="col-md-1 glyphicon glyphicon-ok"></span>
+                                Phone <span ng-show="errorList.phone == false"
+                                            class="col-md-1 glyphicon glyphicon-ok"></span>
                             </div>
-                            <input type="text" class="form-control col-md-2" ng-model="contactData.Phone"  placeholder="Phone Number">
+                            <input type="text" class="form-control col-md-2" ng-model="contactData.Phone"
+                                   placeholder="Phone Number">
                         </div>
 
                         <div ng-show="errorList.phone">
@@ -92,14 +94,17 @@
                         </div>
 
                         <div ng-show="contactData.address != ''">
-                            <p ng-show="errorList.address == false" class="bg-success">{{result.address.formatted_address}}</p>
+                            <p ng-show="errorList.address == false" class="bg-success">
+                                {{result.address.formatted_address}}</p>
+
                             <p ng-show="errorList.address" class="bg-danger">Google couldn't find your address.</p>
                         </div>
 
                         <div class="input-group">
                             <div class="input-group-addon form-label">Country</div>
                             <select class="form-control" ng-options="c.name for c in countryList"
-                                    ng-model="userCountry" ng-change="isValidPhoneNr(contactData.Phone, userCountry.alpha)">
+                                    ng-model="userCountry"
+                                    ng-change="isValidPhoneNr(contactData.Phone, userCountry.alpha)">
                             </select>
                         </div>
 
@@ -110,7 +115,7 @@
                             </select>
                         </div>
 
-                        <div class="input-group">
+                        <div class="input-group" ng-show="selectedMotive.options">
                             <div class="input-group-addon form-label">{{selectedMotive.name}}</div>
                             <select class="form-control" ng-options="o.name for o in selectedMotive.options"
                                     ng-model="selectedUlteriorMotive">

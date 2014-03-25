@@ -2,6 +2,7 @@ angular.module("listingCountry", [])
 
 .service("countryListing", function () {
     this.countryList = [
+        {"name": "Choose one"},
         {"name": "Afghanistan", "alpha": "AF", "alpha-3": "AFG", "country-code": "004", "iso_3166-2": "ISO 3166-2:AF", "region-code": "142", "sub-region-code": "034"},
         {"name": "Ã…land Islands", "alpha": "AX", "alpha-3": "ALA", "country-code": "248", "iso_3166-2": "ISO 3166-2:AX", "region-code": "150", "sub-region-code": "154"},
         {"name": "Albania", "alpha": "AL", "alpha-3": "ALB", "country-code": "008", "iso_3166-2": "ISO 3166-2:AL", "region-code": "150", "sub-region-code": "039"},
