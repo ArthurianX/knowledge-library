@@ -59,23 +59,32 @@ angular.module('zamolxian.my_account', [
         $scope.contact = false;
     };
 
+    /**
+     * Geocode function. Returns formatted address if found, else sets error flag.
+     * @param address String the address to search for
+     */
     $scope.geocode = function(address) {
-        console.log("in geocode function...");
-        console.log(address);
         geocoder.geocode({'address': address}, function(results, status) {
-            console.log("in geocoder geocode function");
+
+            // check if address status is OK (found)
             if(status == google.maps.GeocoderStatus.OK) {
-                console.log("address found");
-                console.log(results);
                 $scope.errorList.address = false;
-                $scope.result.address = results[0];
+
+                // $apply function to update view
+                $scope.$apply(function() {
+                    $scope.result.address = results[0];
+                });
             } else {
-                console.log("address not found");
                 $scope.errorList.address = true;
             }
         });
     };
 
+    /**
+     * Phone number validation function depending on country code.
+     * @param phoneNr String, the phone number
+     * @param countryCode 2 capital letters String, the country ISO code
+     */
     $scope.isValidPhoneNr = function(phoneNr, countryCode) {
         PhoneService.isValidPhoneNr(phoneNr, countryCode)
         .then(function(data) {
@@ -83,7 +92,15 @@ angular.module('zamolxian.my_account', [
         });
     };
 });
+
+/**
+ * Geocoder object from google maps.
+ */
 var geocoder;
+
+/**
+ * Initialize callback function when requiring google maps api via HTTP.
+ */
 var initialize = function() {
     console.log("loading geocoder...");
     geocoder = new google.maps.Geocoder();
