@@ -99,20 +99,22 @@ angular.module('zamolxian.my_account', [
 
                     Locale = 'en-US';
 
-                    $http.get('http://www.phone-validator.net/api/verify', { PhoneNumber: $scope.cdPhone, CountryCode: $scope.cdCountry.cca2,
-                        Locale: Locale, APIKey: 'pv-1571f24e7e74c413343dce8f4214f31a'}).success(function (json) {
-                        console.log(json);
-                        if (typeof(json.status) != "undefined") {
-                            if (json.status === 'FAIL') {
-                                console.log("number is invalid");
-                                $scope.errorList["phoneNumber"] = true;
-                            } else {
-                                console.log("number is valid");
-                            }
-                        }
-                    }).error(function (data, status, headers, config) {
-                        $scope.status = status;
-                    });
+//                    $http.get('http://www.phone-validator.net/api/verify', { PhoneNumber: $scope.cdPhone, CountryCode: $scope.cdCountry.cca2,
+//                        Locale: Locale, APIKey: 'pv-1571f24e7e74c413343dce8f4214f31a'}).success(function (json) {
+//                        console.log(json);
+//                        if (typeof(json.status) != "undefined") {
+//                            if (json.status === 'FAIL') {
+//                                console.log("number is invalid");
+//                                $scope.errorList["phoneNumber"] = true;
+//                            } else {
+//                                console.log("number is valid");
+//                            }
+//                        }
+//                    }).error(function (data, status, headers, config) {
+//                        $scope.status = status;
+//                    });
+
+                    $scope.errorList["phoneNumber"] = !countryListing.checkPhone($scope.cdCountry, $scope.cdPhone);
 
 
                     break;
