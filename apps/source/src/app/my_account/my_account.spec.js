@@ -1,31 +1,64 @@
-describe('AccountCtrl', function() {
-    var $scope, $location, $rootScope, createController;
+describe('AccountCtrl', function () {
 
-    beforeEach(inject(function($injector) {
-        $location = $injector.get('$location');
-        $rootScope = $injector.get('$rootScope');
-        $scope = $rootScope.$new();
 
-        var $controller = $injector.get('$controller');
+    beforeEach(module('zamolxian.my_account'));
 
-        createController = function() {
-            return $controller('AccountCtrl', {
-                '$scope': $scope
+
+    var mockCountryService = {
+
+        console:log("hello")
+        //countryList: {"name": "Zimbabwe", "cca2": "ZW", "callingCode": ["263"]}
+
+        /* checkPhone: function (countryName, phoneNumber) {
+         if (phoneNumber.length == 10 && countryName.length > 2) {
+         return true;
+         }
+         return false;
+         }*/
+    };
+
+
+    it('should have a scope', function () {
+        inject(function ($rootScope, $controller) {
+            var scope = $rootScope.$new;
+
+            var ctrl = $controller('AccountCtrl', {
+                $scope: scope
             });
-        };
-    }));
 
-    it('should have a scope', function() {
-//        var controller = createController();
-//        $location.path('/about');
-//        expect($location.path()).toBe('/about');
-//        expect($scope.isActive('/about')).toBe(true);
-//        expect($scope.isActive('/contact')).toBe(false);
-          expect($scope).toBeTruthy();
+            expect(scope).toBeTruthy();
+
+        });
     });
 
-    it('should have a default username', function() {
-        var controller = createController();
-        expect(controller.scope.userName).toBeTruthy();
+
+    it('should have a default Username', function () {
+        inject(function ($rootScope, $controller) {
+            var scope = $rootScope.$new;
+
+            var ctrl = $controller('AccountCtrl', {
+                $scope: scope
+            });
+
+            expect(scope.userName).toBeTruthy();
+
+        });
+    });
+
+    it('should be able to call the check phone from the the country service', function () {
+        inject(function ($rootScope, $controller, mockCountryService) {
+            var scope = $rootScope.$new;
+
+
+            var ctrl = $controller('AccountCtrl', {
+                $scope: scope,
+                countryListing: mockCountryService
+            });
+            console.log(countryListing.checkPhone("RO","0726323789"));
+            expect('1').toBeDefined();
+
+        });
     });
 });
+
+
