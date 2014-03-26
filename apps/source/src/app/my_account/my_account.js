@@ -18,7 +18,7 @@ angular.module('zamolxian.my_account', [
         });
     })
 
-    .controller("AccountCtrl", function AccountCtrl($scope, $http, promiseTracker, $sanitize, countryListing) {
+    .controller("AccountCtrl", function AccountCtrl($scope, $http, promiseTracker, $sanitize, countryListing, PhoneService) {
         $scope.userName = "George Bora";
         $scope.userMail = "gbora@pititechnologies.ro";
         $scope.contactData = {};

@@ -17,13 +17,16 @@ describe('AccountCtrl', function () {
          }
     };
 
+    var PhoneService = {};
+
 
     it('should have a scope', function () {
         inject(function ($rootScope, $controller) {
             var scope = $rootScope.$new;
 
             var ctrl = $controller('AccountCtrl', {
-                $scope: scope
+                $scope: scope,
+                PhoneService: PhoneService
             });
 
             expect(scope).toBeTruthy();
@@ -37,7 +40,8 @@ describe('AccountCtrl', function () {
             var scope = $rootScope.$new;
 
             var ctrl = $controller('AccountCtrl', {
-                $scope: scope
+                $scope: scope,
+                PhoneService: PhoneService
             });
 
             expect(scope.userName).toBeTruthy();
@@ -52,6 +56,7 @@ describe('AccountCtrl', function () {
 
             var ctrl = $controller('AccountCtrl', {
                 $scope: scope,
+                PhoneService: PhoneService
                 //countryListing: mockCountryService
             });
             //console.log(mockCountryService.checkPhone("RO","0726323789"));

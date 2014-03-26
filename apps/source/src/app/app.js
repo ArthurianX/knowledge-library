@@ -13,6 +13,7 @@ angular.module('zamolxian', [
 //        'listingDocumentation',
 //        'listingModules',
         'listingCountry',
+        'zamolxian.phone-service',
         'ngTouch',
         /*VVV Providers VVV*/
         "zalmoxian.providers",
