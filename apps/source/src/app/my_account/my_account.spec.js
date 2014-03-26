@@ -6,15 +6,15 @@ describe('AccountCtrl', function () {
 
     var mockCountryService = {
 
-        console:log("hello")
+        //console:log("hello")
         //countryList: {"name": "Zimbabwe", "cca2": "ZW", "callingCode": ["263"]}
 
-        /* checkPhone: function (countryName, phoneNumber) {
+         checkPhone: function (countryName, phoneNumber) {
          if (phoneNumber.length == 10 && countryName.length > 2) {
          return true;
          }
          return false;
-         }*/
+         }
     };
 
 
@@ -46,16 +46,16 @@ describe('AccountCtrl', function () {
     });
 
     it('should be able to call the check phone from the the country service', function () {
-        inject(function ($rootScope, $controller, mockCountryService) {
+        inject(function ($rootScope, $controller) {
             var scope = $rootScope.$new;
 
 
             var ctrl = $controller('AccountCtrl', {
                 $scope: scope,
-                countryListing: mockCountryService
+                //countryListing: mockCountryService
             });
-            console.log(countryListing.checkPhone("RO","0726323789"));
-            expect('1').toBeDefined();
+            //console.log(mockCountryService.checkPhone("RO","0726323789"));
+            expect(mockCountryService.checkPhone("RO","0726323789")).toBeDefined();
 
         });
     });
