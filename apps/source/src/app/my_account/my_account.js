@@ -2,6 +2,7 @@ angular.module('zamolxian.my_account', [
         'ui.router.state',
         'ajoslin.promise-tracker',
         "listingCountry",
+        "zamolxian.phone-service",
         'ngSanitize'
     ])
 
@@ -50,7 +51,7 @@ angular.module('zamolxian.my_account', [
         $scope.selectedMotive = $scope.motivesList[0];
 
         $scope.countryList = countryListing.countryList;
-        $scope.cdCountry = $scope.countryList[89];
+        $scope.cdCountry = "valoare ";//$scope.countryList[89]; //TODO: Enable the scope in the tests
 
         // I initialize all the error to false
         $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phoneNumber": false, "adress": false, "county": false, "country": false};
