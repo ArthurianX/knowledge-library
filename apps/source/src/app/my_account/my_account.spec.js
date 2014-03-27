@@ -1,11 +1,26 @@
-describe('AccountCtrl', function () {
+describe('AccountCtrl Test', function () {
 
     var rootScope;
     var scope;
     var ctrl;
 
-    //beforeEach(module('zamolxian.my_account'));
+    /**
+     * Before each test run the contained functions:
+     * load zamolxian.my_account module
+     * inject properties in variables
+     */
+    beforeEach(function () {
+        module('zamolxian.my_account');
+        inject(function ($rootScope, $controller) {
+            rootScope = $rootScope;
+            scope = $rootScope.$new;
 
+            ctrl = $controller('AccountCtrl', {
+                $scope: scope, countryListing: mockCountryListing,
+                PhoneService: mockPhoneService
+            });
+        });
+    });
 
     /**
      * Mock Phone Service
@@ -21,98 +36,87 @@ describe('AccountCtrl', function () {
         }
     };
 
-    beforeEach(function () {
-        module('zamolxian.my_account');
-        inject(function ($rootScope, $controller) {
-            rootScope = $rootScope;
-            scope = rootScope.$new;
-
-            ctrl = $controller("AccountCtrl", {
-                $scope: scope, countryListing: mockCountryService,
-                PhoneService: mockPhoneService
-            });
-        });
-    });
-
-
-    var mockCountryService = {
-
-        //console:log("hello")
-//        countryList: {"name": "Zimbabwe", "cca2": "ZW", "callingCode": ["263"]}
-
-        checkPhone: function (countryName, phoneNumber) {
-            if (phoneNumber.length == 10 && countryName.length > 2) {
-                return true;
-            }
-            return false;
-        }
+    /**
+     * Mock Country Listing Service
+     * @type {{countryList: an array containing country objects}}
+     */
+    var mockCountryListing = {
+        countryList: [
+            {"name": "Afghanistan", "alpha": "AF"},
+            {"name": "Ã…land Islands", "alpha": "AX"}
+        ]
     };
 
+//    it('should return an array of two countries', function () {
+//        expect(scope.countryList.length).toBe(2);
+//    });
 
-    it('should have a scope', function () {
-        expect(scope).toBeDefined();
-    });
+//    it('should return an array of four motives', function () {
+//        expect(scope.motivesList.length).toBe(4);
+//    });
 
+//    it('should initialize errorList with false or undefined values', function () {
+//        var error = false;
+//        for (var property in scope.errorList) {
+//            if (scope.errorList.hasOwnProperty(property)) {
+//                console.log(property);
+//                console.log(scope.errorList[property]);
+//                error = error || scope.errorList[property];
+//            }
+//        }
+//
+//        expect(error).not.toBeTruthy();
+//    });
 
-    it('should have a default Username', function () {
-        expect(scope.userName).toEqual("George Bora");
-    });
+    it('should should return true (false phone error) for valid phone number', inject(function ($q) {
 
-    it('should be able to call the old service', function () {
-        expect(mockCountryService.checkPhone("RO", "0726323789")).toBeDefined();
-    });
-
-    it("should be able to call the new promised based service", inject(function ($q) {
-
-
-
-
-        var numarDeTelefon = "0123456789";
-        var codDeTara = "RO";
+        // correct phone number (lenght == 10)
+        // only checks length of phone number, no country code checking
+        var phoneNr = "0744555666";
+        var countryCode = "RO";
 
         // defer a private instance of $q
         var deferred = $q.defer();
 
         // set what defer resolves (what the then() function returns)
-        deferred.resolve(numarDeTelefon.length == 10);
+        deferred.resolve(phoneNr.length == 10);
 
         // set spy in mockPhoneService on isValidPhoneNr, set what the then() method should return
         spyOn(mockPhoneService, 'isValidPhoneNr').andReturn(deferred.promise);
 
-        /*//This works but it's stupid
-        scope.isValidPhoneNr = function (phoneNr, countryCode) {
-            if (phoneNr.length == 10 && countryCode.length == 2) {
-                return true;
-            } else {
-                return false;
-            }
-        };
-
-        // Interesting it seems that when I insert the whole object it fails but when I inject the sole method it works
-        // thus the problem is with delivering the ser
-        var mockPhoneService2 = {
-            isValidPhoneNr: function (phoneNr, countryCode) {
-                if (phoneNr.length == 10 && countryCode.length == 2) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        };
-
-        scope.PhoneService = mockPhoneService2;*/
-
-
-        // call isValidPhoneNr function (even tough it's not called in the actual controller)
-        scope.mockPhoneService.isValidPhoneNr(numarDeTelefon, codDeTara);
+        // call isValidPhoneNr function
+        scope.isValidPhoneNr(phoneNr, countryCode);
 
         // use scope.$apply to bind async events
-        // A bit costly imho
         rootScope.$apply();
 
         // check if there is no phone error (number is valid)
-        expect(scope.errorList["phone"]).toBeFalsy();
+        expect(scope.errorList.phone).toBeFalsy();
+    }));
+
+    it('should should return false (true phone error) for valid phone number', inject(function ($q) {
+
+        // correct phone number (lenght != 10)
+        var phoneNr = "07445552668";
+        var countryCode = "RO";
+
+        // defer a private instance of $q
+        var deferred = $q.defer();
+
+        // set what defer resolves (what the then() function returns)
+        // only checks length of phone number, no country code checking
+        deferred.resolve(phoneNr.length == 10);
+
+        // set spy in mockPhoneService on isValidPhoneNr, set what the then() method should return
+        spyOn(mockPhoneService, 'isValidPhoneNr').andReturn(deferred.promise);
+
+        // call isValidPhoneNr function
+        scope.isValidPhoneNr(phoneNr, countryCode);
+
+        // use scope.$apply to bind async events
+        rootScope.$apply();
+
+        // check if there is a phone error (number is not valid)
+        expect(scope.errorList.phone).toBeTruthy();
     }));
 });
-
-

@@ -51,13 +51,26 @@ angular.module('zamolxian.my_account', [
         $scope.selectedMotive = $scope.motivesList[0];
 
         $scope.countryList = countryListing.countryList;
-        $scope.cdCountry = "valoare ";//$scope.countryList[89]; //TODO: Enable the scope in the tests
+        $scope.cdCountry = $scope.countryList[89]; //TODO: Enable the scope in the tests
 
         // I initialize all the error to false
         $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phoneNumber": false, "adress": false, "county": false, "country": false};
 
         $scope.contactZalmoxis = function () {
             $scope.contact = false;
+        };
+
+
+        /**
+         * Phone number validation function depending on country code.
+         * @param phoneNr String, the phone number
+         * @param countryCode 2 capital letters String, the country ISO code
+         */
+        $scope.isValidPhoneNr = function (phoneNr, countryCode) {
+            PhoneService.isValidPhoneNr(phoneNr, countryCode)
+                .then(function (data) {
+                    $scope.errorList.phone = !data;
+                });
         };
 
         $scope.checkContactData = function (suspect) {
@@ -126,6 +139,10 @@ angular.module('zamolxian.my_account', [
             }
         };
     });
+
+
+
+
 
 
 var geocoder;
