@@ -600,6 +600,12 @@ module.exports = function ( grunt ) {
             },
 
             /**
+             * Running the protractor set of end to end test suites.
+             */
+
+
+
+                /**
              * When a CoffeeScript unit test file changes, we only want to lint it and
              * run the unit tests. We don't want to do any live reloading.
              */
@@ -610,6 +616,16 @@ module.exports = function ( grunt ) {
                 tasks: [ 'coffeelint:test', 'karma:unit:run' ],
                 options: {
                     livereload: false
+                }
+            }
+
+        },
+
+        protractor: {
+            my_target : {
+                options: {
+                    path: 'source/src/common/e2etests/zalmoxise2e.spec.js',
+                    command: 'custom-webdriver-manager start'
                 }
             }
         }
