@@ -47,6 +47,8 @@ describe('AccountCtrl Test', function () {
         ]
     };
 
+    // Unit Tests
+
     it('should return an array of two countries', function () {
         expect(scope.countryList.length).toBe(2);
     });
