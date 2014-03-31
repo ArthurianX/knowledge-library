@@ -18,6 +18,10 @@ module.exports = function ( grunt ) {
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-html2js');
+    /**
+     * Protractor
+     */
+    grunt.loadNpmTasks('grunt-protractor-runner');
 
     /**
      * Load in our build configuration file.
@@ -612,10 +616,32 @@ module.exports = function ( grunt ) {
                     livereload: false
                 }
             }
+        },
+
+        /**
+         * Protractor task.
+         */
+        protractor: {
+            files: [
+                '<%= app_files.protractor %>'
+            ],
+            options: {
+                configFile: "protractor_conf.js", // Default config file
+                keepAlive: true, // If false, the grunt process stops when the test fails.
+                noColor: false, // If true, protractor will not use colors in its output.
+                args: {
+                    // Arguments passed to the command
+                }
+            }
         }
     };
 
     grunt.initConfig( grunt.util._.extend( taskConfig, userConfig ) );
+
+    /**
+     * Register new grunt task.
+     */
+    //grunt.registerTask('protractor');
 
     /**
      * In order to make it safe to just compile or copy *only* what was changed,
@@ -751,5 +777,4 @@ module.exports = function ( grunt ) {
             }
         });
     });
-
 };
