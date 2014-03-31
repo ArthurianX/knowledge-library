@@ -1,7 +1,7 @@
 angular.module('zamolxian.books', [
-        'ui.router.state',
-        'ajoslin.promise-tracker'
-    ])
+    'ui.router.state',
+    'ajoslin.promise-tracker'
+])
 
 /**
  * Each section or module of the site can also have its own routes. AngularJS

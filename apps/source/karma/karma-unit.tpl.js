@@ -19,8 +19,8 @@ module.exports = function ( karma ) {
     exclude: [
       'src/assets/**/*.js',
       'production/**/*.js',
-      'bin/**/*.js'
-
+      'bin/**/*.js',
+      'src/**/*.e2e.js'
     ],
     frameworks: [ 'jasmine' ],
     plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-phantomjs-launcher', 'karma-coffee-preprocessor' ],

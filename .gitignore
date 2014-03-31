@@ -15,6 +15,7 @@ results
 apps/client/hooks
 apps/client/platforms
 apps/client/plugins
+apps/client/www
 npm-debug.log
 node_modules
 vendor
