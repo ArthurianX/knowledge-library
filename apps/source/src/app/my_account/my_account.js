@@ -61,11 +61,6 @@ angular.module('zamolxian.my_account', [
         };
 
 
-        /**
-         * Phone number validation function depending on country code.
-         * @param phoneNr String, the phone number
-         * @param countryCode 2 capital letters String, the country ISO code
-         */
         $scope.isValidPhoneNr = function (phoneNr, countryCode) {
             PhoneService.isValidPhoneNr(phoneNr, countryCode)
                 .then(function (data) {

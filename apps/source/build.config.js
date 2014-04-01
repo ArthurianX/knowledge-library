@@ -23,6 +23,7 @@ module.exports = {
     app_files: {
         js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/**/*.e2e.js', '!src/assets/**/*.js' ],
         jsunit: [ 'src/**/*.spec.js' ],
+        protractor: [ 'src/**/*.e2e.js' ],
 
         coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
         coffeeunit: [ 'src/**/*.spec.coffee' ],

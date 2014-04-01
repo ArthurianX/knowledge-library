@@ -4,11 +4,7 @@ describe('AccountCtrl Test', function () {
     var scope;
     var ctrl;
 
-    /**
-     * Before each test run the contained functions:
-     * load zamolxian.my_account module
-     * inject properties in variables
-     */
+
     beforeEach(function () {
         module('zamolxian.my_account');
         inject(function ($rootScope, $controller) {
@@ -23,8 +19,19 @@ describe('AccountCtrl Test', function () {
     });
 
     /**
-     * Mock Phone Service
-     * @type {{isValidPhoneNr: mock phone number validation function}}
+     * @name MockCountryService
+     * @description the stub service which returns a country list
+     */
+    var mockCountryListing = {
+        countryList: [
+            {"name": "Afghanistan", "alpha": "AF"},
+            {"name": "Ã…land Islands", "alpha": "AX"}
+        ]
+    };
+
+    /**
+     * @name MockPhoneService
+     * @description the stub service which check if the phones are valid
      */
     var mockPhoneService = {
         isValidPhoneNr: function (phoneNr, countryCode) {
@@ -36,16 +43,7 @@ describe('AccountCtrl Test', function () {
         }
     };
 
-    /**
-     * Mock Country Listing Service
-     * @type {{countryList: an array containing country objects}}
-     */
-    var mockCountryListing = {
-        countryList: [
-            {"name": "Afghanistan", "alpha": "AF"},
-            {"name": "Ã…land Islands", "alpha": "AX"}
-        ]
-    };
+
 
 //    it('should return an array of two countries', function () {
 //        expect(scope.countryList.length).toBe(2);

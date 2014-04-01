@@ -30,6 +30,11 @@
     "grunt-conventional-changelog": "~0.1.1",
     "grunt-bump": "0.0.13",
     "protractor": "0.16.1",
-    "grunt-protractor-runner": "0.2.4"
+    "grunt-protractor-runner": "0.2.4",
+    "dgeni": "~0.2.2",
+    "dgeni-packages": "~0.8.2",
+    "canonical-path": "0.0.2",
+    "rimraf": "~2.2.6",
+    "lodash": "~2.4.1"
   }
 }

@@ -1,4 +1,4 @@
-module.exports = function ( grunt ) {
+module.exports = function (grunt) {
 
     /**
      * Load required Grunt tasks. These are installed based on the versions listed
@@ -23,7 +23,7 @@ module.exports = function ( grunt ) {
     /**
      * Load in our build configuration file.
      */
-    var userConfig = require( './build.config.js' );
+    var userConfig = require('./build.config.js');
 
     /**
      * This is the configuration object Grunt uses to give each plugin its
@@ -42,14 +42,13 @@ module.exports = function ( grunt ) {
          * pairs are evaluated based on this very configuration object.
          */
         meta: {
-            banner:
-                '/**\n' +
-                    ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-                    ' * <%= pkg.homepage %>\n' +
-                    ' *\n' +
-                    ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-                    ' * Licensed <%= pkg.licenses.type %> <<%= pkg.licenses.url %>>\n' +
-                    ' */\n'
+            banner: '/**\n' +
+                ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+                ' * <%= pkg.homepage %>\n' +
+                ' *\n' +
+                ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+                ' * Licensed <%= pkg.licenses.type %> <<%= pkg.licenses.url %>>\n' +
+                ' */\n'
         },
 
         /**
@@ -100,10 +99,10 @@ module.exports = function ( grunt ) {
         },
 
         /*clean: [
-            '<%= build_dir %>',
-            '<%= compile_dir %>',
-            '<%= production_dir %>'
-        ],*/
+         '<%= build_dir %>',
+         '<%= compile_dir %>',
+         '<%= production_dir %>'
+         ],*/
 
 
 
@@ -606,7 +605,7 @@ module.exports = function ( grunt ) {
 
 
 
-                /**
+            /**
              * When a CoffeeScript unit test file changes, we only want to lint it and
              * run the unit tests. We don't want to do any live reloading.
              */
@@ -623,24 +622,21 @@ module.exports = function ( grunt ) {
         },
 
         protractor: {
+            files: [
+                '<%= app_files.protractor %>'
+            ],
             options: {
-                configFile: "source/protractor_conf.js", // Default config file
+                configFile: "protractor_conf.js", // Default config file
                 keepAlive: true, // If false, the grunt process stops when the test fails.
                 noColor: false, // If true, protractor will not use colors in its output.
                 args: {
                     // Arguments passed to the command
                 }
-            },
-            my_target : {
-                options: {
-                    path: 'source/src/common/e2etests/zalmoxise2e.spec.js',
-                    command: ''
-                }
             }
         }
     };
 
-    grunt.initConfig( grunt.util._.extend( taskConfig, userConfig ) );
+    grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
 
     /**
      * In order to make it safe to just compile or copy *only* what was changed,
@@ -649,18 +645,18 @@ module.exports = function ( grunt ) {
      * `delta`) and then add a new task called `watch` that does a clean build
      * before watching for changes.
      */
-    grunt.renameTask( 'watch', 'delta' );
-    grunt.registerTask( 'watch', [ 'build', 'karma:unit', 'delta' ] );
+    grunt.renameTask('watch', 'delta');
+    grunt.registerTask('watch', [ 'build', 'karma:unit', 'delta' ]);
 
     /**
      * The default task is to build and compile.
      */
-    grunt.registerTask( 'default', [ 'build', 'compile' ] );
+    grunt.registerTask('default', [ 'build', 'compile' ]);
 
     /**
      * The `build` task gets your app ready to run for development and testing.
      */
-    grunt.registerTask( 'build', [
+    grunt.registerTask('build', [
         'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
         'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets', 'copy:build_vendor_fonts',
         'copy:build_appjs', 'copy:build_vendorcss', 'copy:build_vendorjs', 'copy:copy_cordova_conf', 'index:build', 'karmaconfig',
@@ -671,16 +667,21 @@ module.exports = function ( grunt ) {
      * The `compile` task gets your app ready for deployment by concatenating and
      * minifying your code.
      */
-    grunt.registerTask( 'compile', [
-        'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:move_prod', 'copy:prod_vendor_fonts', 'copy:cordova_conf_prod'
+    grunt.registerTask('compile', [
+        'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:move_prod', 'copy:prod_vendor_fonts', 'copy:cordova_conf_prod', 'protractor'
     ]);
 
     /**
-     * A utility function to get all app JavaScript sources.
+     * The taskt o generate the config files.
      */
+    grunt.registerTask('dgeni', 'Generate docs via Dgeni.', function() {
+        var dgeni = require('dgeni');
+        var done = this.async();
 
-
-
+        dgeni('dgeni-config.js')
+            .generateDocs()
+            .then(done);
+    });
 
     //Declare the primary files array, avoid them for secondary lib, use them in first
 
@@ -692,24 +693,23 @@ module.exports = function ( grunt ) {
      * exclude the files from the vendor when adding them to tthe primaries */
 
 
-
-    function filterForJS ( files ) {
-        return files.filter( function ( file ) {
+    function filterForJS(files) {
+        return files.filter(function (file) {
             //Iterate and exclude/include
-            for(var i=0; i < mainFiles.length; i++) {
+            for (var i = 0; i < mainFiles.length; i++) {
                 if (file != mainFiles[i]) {
-                    return file.match( /\.js$/ );
+                    return file.match(/\.js$/);
                 }
             }
         });
     }
 
-    function filterForJSMain ( files ) {
-        return files.filter( function ( file ) {
+    function filterForJSMain(files) {
+        return files.filter(function (file) {
             //Iterate and exclude/include
-            for(var i=0; i < mainFiles.length; i++) {
+            for (var i = 0; i < mainFiles.length; i++) {
                 if (file == mainFiles[i]) {
-                    return file.match( /\.js$/ );
+                    return file.match(/\.js$/);
                 }
             }
         });
@@ -718,9 +718,9 @@ module.exports = function ( grunt ) {
     /**
      * A utility function to get all app CSS sources.
      */
-    function filterForCSS ( files ) {
-        return files.filter( function ( file ) {
-            return file.match( /\.css$/ );
+    function filterForCSS(files) {
+        return files.filter(function (file) {
+            return file.match(/\.css$/);
         });
     }
 
@@ -730,26 +730,26 @@ module.exports = function ( grunt ) {
      * the list into variables for the template to use and then runs the
      * compilation.
      */
-    grunt.registerMultiTask( 'index', 'Process index.html template', function () {
-        var dirRE = new RegExp( '^('+grunt.config('build_dir')+'|'+grunt.config('compile_dir')+')\/', 'g' );
-        var jsFiles = filterForJS( this.filesSrc ).map( function ( file ) {
-            return file.replace( dirRE, '' );
+    grunt.registerMultiTask('index', 'Process index.html template', function () {
+        var dirRE = new RegExp('^(' + grunt.config('build_dir') + '|' + grunt.config('compile_dir') + ')\/', 'g');
+        var jsFiles = filterForJS(this.filesSrc).map(function (file) {
+            return file.replace(dirRE, '');
         });
-        var jsFilesMain = filterForJSMain( this.filesSrc ).map( function ( file ) {
-            return file.replace( dirRE, '' );
+        var jsFilesMain = filterForJSMain(this.filesSrc).map(function (file) {
+            return file.replace(dirRE, '');
         });
-        var cssFiles = filterForCSS( this.filesSrc ).map( function ( file ) {
-            return file.replace( dirRE, '' );
+        var cssFiles = filterForCSS(this.filesSrc).map(function (file) {
+            return file.replace(dirRE, '');
         });
 
         grunt.file.copy('src/index.html', this.data.dir + '/index.html', {
-            process: function ( contents, path ) {
-                return grunt.template.process( contents, {
+            process: function (contents, path) {
+                return grunt.template.process(contents, {
                     data: {
                         scripts: jsFiles,
                         scriptsMain: jsFilesMain,
                         styles: cssFiles,
-                        version: grunt.config( 'pkg.version' )
+                        version: grunt.config('pkg.version')
                     }
                 });
             }
@@ -761,13 +761,13 @@ module.exports = function ( grunt ) {
      * run, we use grunt to manage the list for us. The `karma/*` files are
      * compiled as grunt templates for use by Karma. Yay!
      */
-    grunt.registerMultiTask( 'karmaconfig', 'Process karma config templates', function () {
-        var jsFiles = filterForJS( this.filesSrc );
-        var jsFilesMain = filterForJSMain( this.filesSrc );
+    grunt.registerMultiTask('karmaconfig', 'Process karma config templates', function () {
+        var jsFiles = filterForJS(this.filesSrc);
+        var jsFilesMain = filterForJSMain(this.filesSrc);
 
-        grunt.file.copy( 'karma/karma-unit.tpl.js', grunt.config( 'build_dir' ) + '/karma-unit.js', {
-            process: function ( contents, path ) {
-                return grunt.template.process( contents, {
+        grunt.file.copy('karma/karma-unit.tpl.js', grunt.config('build_dir') + '/karma-unit.js', {
+            process: function (contents, path) {
+                return grunt.template.process(contents, {
                     data: {
                         scripts: jsFiles,
                         scriptsMain: jsFilesMain,
@@ -776,5 +776,6 @@ module.exports = function ( grunt ) {
             }
         });
     });
+
 
 };
