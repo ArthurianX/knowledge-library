@@ -677,10 +677,16 @@ module.exports = function ( grunt ) {
     ]);
 
     /**
-     * A utility function to get all app JavaScript sources.
+     * Dgeni task.
      */
+    grunt.registerTask('dgeni', 'Generate docs via Dgeni.', function() {
+        var dgeni = require('dgeni');
+        var done = this.async();
 
-
+        dgeni('dgeni.conf.js')
+            .generateDocs()
+            .then(done);
+    });
 
 
     //Declare the primary files array, avoid them for secondary lib, use them in first

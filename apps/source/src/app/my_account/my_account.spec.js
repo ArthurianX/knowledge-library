@@ -23,8 +23,8 @@ describe('AccountCtrl Test', function () {
     });
 
     /**
-     * Mock Phone Service
-     * @type {{isValidPhoneNr: mock phone number validation function}}
+     * @name Mock Phone Service
+     * @description {{isValidPhoneNr: mock phone number validation function}}
      */
     var mockPhoneService = {
         isValidPhoneNr: function (phoneNr, countryCode) {
@@ -37,8 +37,8 @@ describe('AccountCtrl Test', function () {
     };
 
     /**
-     * Mock Country Listing Service
-     * @type {{countryList: an array containing country objects}}
+     * @name Mock Country Listing Service
+     * @description {{countryList: an array containing country objects}}
      */
     var mockCountryListing = {
         countryList: [
