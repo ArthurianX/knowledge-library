@@ -1,10 +1,10 @@
 angular.module('zamolxian.my_account', [
-        'ui.router.state',
-        'ajoslin.promise-tracker',
-        "listingCountry",
-        "zamolxian.phone-service",
-        'ngSanitize'
-    ])
+    'ui.router.state',
+    'ajoslin.promise-tracker',
+    "listingCountry",
+    "zamolxian.phone-service",
+    'ngSanitize'
+])
 
     .config(function config($stateProvider, $httpProvider) {
         $stateProvider.state('my_account', {
@@ -23,7 +23,34 @@ angular.module('zamolxian.my_account', [
         $scope.userName = "George Bora";
         $scope.userMail = "gbora@pititechnologies.ro";
         $scope.contactData = {};
+        /**
+         * @name test_the_zone
+         * @description Adds the event which will trigger an assincronious error in order to test the stack tracing of node js.
+         */
+        function test_the_zone() {
+            var erBtn = document.getElementById("btnError");
+            erBtn.addEventListener("click", middleMan, false);
 
+        }
+
+        /**
+         * @name middleMan
+         * @description Providers a extra layer to the stack trace.
+         */
+        function middleMan() {
+            theRealCulprit();
+        }
+
+        /**
+         * @name theRealCulprit
+         * @description Causes the error which wil lead to the stack trace.
+         */
+        function theRealCulprit() {
+            throw new Error('Why not just work just bloody once?');
+        }
+
+        zone.fork(Zone.longStackTraceZone).run(test_the_zone);
+        //test_the_zone();
 
         $scope.motivesList = [
             { "name": "Hire Me Pls", "options": [
@@ -134,10 +161,6 @@ angular.module('zamolxian.my_account', [
             }
         };
     });
-
-
-
-
 
 
 var geocoder;

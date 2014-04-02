@@ -3,6 +3,8 @@ angular.module('zamolxian.community', [
         'ajoslin.promise-tracker'
     ])
 
+
+
     .config(function config($stateProvider) {
         $stateProvider.state('community', {
             url: '/community',

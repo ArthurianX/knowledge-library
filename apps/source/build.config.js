@@ -92,6 +92,7 @@ module.exports = {
             'vendor/angularfire/angularfire.min.js',
             'customlibs/highlight/highlight.pack.js',
             'vendor/angular-highlightjs/angular-highlightjs.min.js',
+            'vendor/zone/zone.js'
         ],
         css: [
             'vendor/bootstrap/dist/css/bootstrap.min.css',
