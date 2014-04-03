@@ -29,7 +29,8 @@ angular.module('zamolxian', [
         'zamolxian.docs',
         'zamolxian.modules_updates',
         'zamolxian.community',
-        'zalmoxian.interceptors'
+        'zalmoxian.interceptors',
+        'zalmoxian.interceptorCountry'
 
     ])
 

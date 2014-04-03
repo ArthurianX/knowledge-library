@@ -19,6 +19,10 @@ angular.module('zamolxian.my_account', [
         });
     })
 
+    .config( function () {
+        //countryListing.interceptors.push('myCountryInterceptor');
+    })
+
     .controller("AccountCtrl", function AccountCtrl($scope, $http, promiseTracker, $sanitize, countryListing, PhoneService) {
         $scope.userName = "George Bora";
         $scope.userMail = "gbora@pititechnologies.ro";
