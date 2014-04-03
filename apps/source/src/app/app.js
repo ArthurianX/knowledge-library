@@ -28,7 +28,8 @@ angular.module('zamolxian', [
         'zamolxian.my_account',
         'zamolxian.docs',
         'zamolxian.modules_updates',
-        'zamolxian.community'
+        'zamolxian.community',
+        'zalmoxian.interceptors'
 
     ])
 
@@ -41,6 +42,11 @@ angular.module('zamolxian', [
 
         $anchorScrollProvider.disableAutoScrolling();
 
+    })
+
+
+    .config( function($httpProvider) {
+        $httpProvider.interceptors.push('myHttpInterceptor');
     })
 
     .run(function run($rootScope) {
