@@ -1,7 +1,5 @@
 angular.module('zamolxian.irc', [
-    'ui.router.state',
-    'ajoslin.promise-tracker'
-    //'ui.bootstrap'
+    'ui.router.state'
 ])
 
 
@@ -18,6 +16,31 @@ angular.module('zamolxian.irc', [
         });
     })
 
-.controller("IrcCtrl", function IrcCtrl ($scope, promiseTracker) {
+.controller("IrcCtrl", function IrcCtrl ($scope,$http) {
         console.log("IRC controller has been loaded");
+
+        $scope.showThePremium = function () {
+            $http.get("premium-content-zalmoxian.html");
+        };
+
+
+        $scope.$on('event:auth-loginRequired', function(e, rejection) {
+            $scope.loginReq = true;
+        });
+
+        $scope.$on('event:auth-loginConfirmed', function() {
+            $scope.loginReq = false;
+        });
+
+        $scope.$on('event:auth-login-failed', function(e, status) {
+            var error = "Login failed.";
+            if (status == 401) {
+                error = "Invalid Username or Password.";
+            }
+            $scope.message = error;
+        });
+
+        $scope.$on('event:auth-logout-complete', function() {
+
+        });
     });

@@ -29,8 +29,11 @@ angular.module('zamolxian', [
         'zamolxian.docs',
         'zamolxian.modules_updates',
         'zamolxian.community',
+        'zamolxian.login',
         'zalmoxian.interceptors',
-        'zalmoxian.interceptorCountry'
+        'zalmoxian.interceptorCountry',
+        'zalmoxian-auth-interceptor-buffer',
+        'zalmoxian-auth-interceptor'
 
     ])
 
@@ -39,7 +42,7 @@ angular.module('zamolxian', [
 
         $logProvider.debugEnabled(false);
 
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/login');
 
         $anchorScrollProvider.disableAutoScrolling();
 
@@ -48,6 +51,21 @@ angular.module('zamolxian', [
 
     .config( function($httpProvider) {
         $httpProvider.interceptors.push('myHttpInterceptor');
+    })
+
+    .config(function($provide) {
+        $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
+    })
+
+    // define our fake backend
+    .run(function($httpBackend) {
+        // do not bother server, respond with given content
+        $httpBackend.whenGET('premium-content-zalmoxian.html').respond(401, "I can't let you do that Dave", {header: 'one'});
+        // l
+        $httpBackend.whenJSONP().passThrough();
+        // For everything else, don't mock
+        $httpBackend.whenGET(/^\w+.*/).passThrough();
+        $httpBackend.whenPOST(/^\w+.*/).passThrough();
     })
 
     .run(function run($rootScope) {

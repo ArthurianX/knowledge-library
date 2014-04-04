@@ -1,0 +1,45 @@
+<div ng-controller="IrcCtrl">
+
+
+    <div class="row pagination-centered">
+        <div class="well col-md-3 col-md-offset-5"> Please login in order to use the app.</div>
+    </div>
+
+
+    <div class="row pagination-centered">
+        <div class="well col-md-3 col-md-offset-5">
+            <div class="form-group biginputgroups">
+                <div class="input-group">
+                    <div class="input-group-addon addon-zal">UserName</div>
+                    <input type="text" class="form-control col-md-2 " ng-model="loginUserName"
+                           placeholder="John">
+                </div>
+
+                <div ng-show="errorList['firstName'] === true">
+                    <p class="bg-danger"> First name must have between 5 and 30 characters.</p>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-addon addon-zal">Password</div>
+                    <input type="password" class="form-control col-md-2 " >
+                </div>
+
+                <div ng-show="errorList['lastName'] === true">
+                    <p class="bg-danger"> Last Name must have between 5 and 30 characters.</p>
+                </div>
+
+                <div class="input-group">
+                    <input type="button" value="Login" ng-click="loginUser()"/>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+</div>

@@ -103,6 +103,23 @@ angular.module('zamolxian.my_account', [
                 });
         };
 
+        /**
+         * @name canSendData
+         * @description return true if all the errors are false and there is data to send, thereby activating the send button on the form
+         */
+        $scope.canSendData =  function () {
+            var initialError = false;
+            for (var property in $scope.errorList) {
+                if (object.hasOwnProperty(property)) {
+                    initialError = initialError | $scope.errorList[property];
+                }
+            }
+
+            //check if cdName etc are empty if they are we will set initialError to true which will ultimately return false
+            initialError = $scope.cdFirstName.length > 0;
+
+        };
+
         $scope.checkContactData = function (suspect) {
             switch (suspect) {
                 case "firstName" :
