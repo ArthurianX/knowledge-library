@@ -6,8 +6,6 @@ angular.module("zamolxian.authentication-service", [])
             // authentication logic goes here, eventually check headers too
             authenticate: function (data) {
                 var realData = JSON.parse(data);
-                console.log('Intercepted POST request. Data below');
-                console.log(realData.password);
 
                 // check if username and password exists
                 if (realData.username && realData.password) {
@@ -22,10 +20,14 @@ angular.module("zamolxian.authentication-service", [])
 
             // token verification function. logic goes here
             verifyToken: function (headers) {
+
+                // check if token is correct
                 if (headers.Authorization === 'Basic abcd1234') {
+                    // response OK
                     return [200, {data: 'example data'}, {}];
                 }
 
+                // response FORBIDDEN
                 return [403, {}, {}];
             }
         };
