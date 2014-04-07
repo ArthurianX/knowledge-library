@@ -57,6 +57,13 @@ angular.module('zamolxian', [
             return AuthenticationService.authenticate(data);
         });
 
+        // Mock http backend service. Intercept URL and verify if authorization header contains token
+        $httpBackend.whenGET('http://zamolxian.client/verify_token').respond(function (method, url, data, headers) {
+
+            // perform token verification in request header
+            return AuthenticationService.verifyToken(headers);
+        });
+
         //Set body class for individual route pages.
         $rootScope.$on('$stateChangeSuccess', function (event, currentState) {
             $rootScope.getCurrentLocation = function () {
@@ -69,13 +76,20 @@ angular.module('zamolxian', [
 
     })
 
-    .controller('AppCtrl', function AppCtrl($scope, $location, $stateParams, $state) {
+    .controller('AppCtrl', function AppCtrl($scope, $location, $stateParams, $state, $http) {
 
-        // Check if user is logged in. Redirect to login page if not.
-        if (!window.localStorage.userToken) {
-            console.log("USER NOT LOGGED IN!");
-            $state.go('login');
-        }
+        // send request for token verification. headers contain authorization token
+        $http.get('http://zamolxian.client/verify_token', {headers: {'Authorization': 'Basic ' + window.localStorage.userToken}})
+            .success(function(data) {
+                console.log("TOKEN SUCESS");
+                // state.go wherever user wants to
+            })
+            .error(function(data) {
+                console.log("TOKEN FAILURE");
+
+                // redirect to login page
+                $state.go('login');
+            });
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (angular.isDefined(toState.data.pageTitle)) {

@@ -18,6 +18,15 @@ angular.module("zamolxian.authentication-service", [])
 
                 // response with status code 403 (FORBIDDEN)
                 return [403, {}, {}];
+            },
+
+            // token verification function. logic goes here
+            verifyToken: function (headers) {
+                if (headers.Authorization === 'Basic abcd1234') {
+                    return [200, {data: 'example data'}, {}];
+                }
+
+                return [403, {}, {}];
             }
         };
     });
