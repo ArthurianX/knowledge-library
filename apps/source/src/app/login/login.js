@@ -12,7 +12,7 @@ angular.module('zamolxian.login', [
                     templateUrl: 'login/login.tpl.html'
                 }
             },
-            data: { pageTitle: 'Irc' }
+            data: { pageTitle: 'Login' }
         });
     })
 

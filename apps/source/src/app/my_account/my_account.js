@@ -3,6 +3,7 @@ angular.module('zamolxian.my_account', [
     'ajoslin.promise-tracker',
     "listingCountry",
     "zamolxian.phone-service",
+    "zalmoxian-auth-service",
     'ngSanitize'
 ])
 
@@ -23,7 +24,24 @@ angular.module('zamolxian.my_account', [
         //countryListing.interceptors.push('myCountryInterceptor');
     })
 
-    .controller("AccountCtrl", function AccountCtrl($scope, $http, promiseTracker, $sanitize, countryListing, PhoneService) {
+    .controller("AccountCtrl", function AccountCtrl($scope, $http, promiseTracker, $state,$sanitize, countryListing, PhoneService,zalAuthService) {
+
+        /**
+         * @name no-name
+         * @description this should bounce you to the login page if you're not loged in
+         *
+         */
+
+//        var userToken = localStorage.getItem('userToken');
+//        if (userToken === null) {
+//            $state.go("login");
+//        } else {
+//            console.log("you have token");
+//        }
+
+        zalAuthService.bounceLogin();
+
+
         $scope.userName = "George Bora";
         $scope.userMail = "gbora@pititechnologies.ro";
         $scope.contactData = {};

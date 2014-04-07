@@ -1,6 +1,7 @@
 angular.module('zamolxian.docs', [
         'ui.router.state',
-        'ajoslin.promise-tracker'
+        'ajoslin.promise-tracker',
+        'zalmoxian-auth-service'
     ])
 
     .config(function config($stateProvider) {
@@ -16,6 +17,6 @@ angular.module('zamolxian.docs', [
         });
     })
 
-    .controller("DocsCtrl", function AccountCtrl($scope, promiseTracker) {
-
+    .controller("DocsCtrl", function AccountCtrl($scope, promiseTracker, zalAuthService) {
+        zalAuthService.bounceLogin();
     });

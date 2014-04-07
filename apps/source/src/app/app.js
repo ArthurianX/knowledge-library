@@ -33,7 +33,8 @@ angular.module('zamolxian', [
         'zalmoxian.interceptors',
         'zalmoxian.interceptorCountry',
         'zalmoxian-auth-interceptor-buffer',
-        'zalmoxian-auth-interceptor'
+        'zalmoxian-auth-interceptor',
+        'zalmoxian-auth-service'
 
     ])
 
