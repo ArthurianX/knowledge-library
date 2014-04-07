@@ -30,10 +30,9 @@ angular.module('zamolxian', [
         'zamolxian.docs',
         'zamolxian.modules_updates',
         'zamolxian.community',
+        'zamolxian.login',
         // for mocking httpBackend
-        'ngMockE2E',
-        'zamolxian.login'
-
+        'ngMockE2E'
     ])
 
     .config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $anchorScrollProvider) {
@@ -49,12 +48,12 @@ angular.module('zamolxian', [
 
     .run(function run($rootScope, $httpBackend) {
 
-        // intercept URL and respond  with a token
+        // Mock http backend service. Intercept URL and respond with a status (and a token)
         $httpBackend.whenPOST('http://zamolxian.client/login').respond(function(method, url, data, headers) {
             var realData = JSON.parse(data);
             console.log('Intercepted POST request. Data below');
-            console.log(realData);
-            if (realData.username !== "" && realData.password !== "") {
+            console.log(realData.password);
+            if (realData.username && realData.password) {
                 return [200, {token: 'abcd1234'}, {}];
             }
             return [400, {}, {}];
@@ -72,7 +71,12 @@ angular.module('zamolxian', [
 
     })
 
-    .controller('AppCtrl', function AppCtrl($scope, $location, $stateParams) {
+    .controller('AppCtrl', function AppCtrl($scope, $location, $stateParams, $state) {
+
+        if (!window.localStorage.userToken) {
+            console.log("USER NOT LOGGED IN!");
+            $state.go('login');
+        }
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (angular.isDefined(toState.data.pageTitle)) {
