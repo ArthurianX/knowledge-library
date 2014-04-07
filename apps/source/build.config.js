@@ -90,7 +90,9 @@ module.exports = {
             'vendor/firebase/firebase.js',
             'vendor/angularfire/angularfire.min.js',
             'customlibs/highlight/highlight.pack.js',
-            'vendor/angular-highlightjs/angular-highlightjs.min.js'
+            'vendor/angular-highlightjs/angular-highlightjs.min.js',
+            // for mocking httpBackend
+            'vendor/angular-mocks/angular-mocks.js'
         ],
         css: [
             'vendor/bootstrap/dist/css/bootstrap.min.css',

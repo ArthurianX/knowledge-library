@@ -34,6 +34,8 @@ module.exports = function(config) {
         }
     ]);
 
+    console.log(config.source.files);
+
     // Our generated docs will be written here:
     // @dgeni developers: Why is both (outputFolder and contentsFolder) needed?
     config.set('rendering.outputFolder', '');

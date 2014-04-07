@@ -29,7 +29,10 @@ angular.module('zamolxian', [
         'zamolxian.my_account',
         'zamolxian.docs',
         'zamolxian.modules_updates',
-        'zamolxian.community'
+        'zamolxian.community',
+        // for mocking httpBackend
+        'ngMockE2E',
+        'zamolxian.login'
 
     ])
 
@@ -44,7 +47,19 @@ angular.module('zamolxian', [
 
     })
 
-    .run(function run($rootScope) {
+    .run(function run($rootScope, $httpBackend) {
+
+        // intercept URL and respond  with a token
+        $httpBackend.whenPOST('http://zamolxian.client/login').respond(function(method, url, data, headers) {
+            var realData = JSON.parse(data);
+            console.log('Intercepted POST request. Data below');
+            console.log(realData);
+            if (realData.username !== "" && realData.password !== "") {
+                return [200, {token: 'abcd1234'}, {}];
+            }
+            return [400, {}, {}];
+        });
+
         //Set body class for individual route pages.
         $rootScope.$on('$stateChangeSuccess', function (event, currentState) {
             $rootScope.getCurrentLocation = function () {
