@@ -1,39 +1,41 @@
 angular.module('zamolxian', [
-        'ngAnimate',
-        'ngSanitize',
-        'ivpusic.cookie',
-        'templates-app',
-        'templates-common',
-        'ui.router.state',
-        'ui.route',
-        'anim-in-out',
-        'ui.bootstrap',
-        'ngTouch',
-        /*VVV Providers VVV*/
-        'zamolxian.providers.factory',
-        'hljs',
-        /*VVV App Config VVV*/
-        'zamolxian.config',
-        /* Directives */
-        'zamolxian.directives',
-        /*VVV PAGES VVV*/
-        'zamolxian.home',
-        'zamolxian.home-second',
-        'zamolxian.about',
-        'zamolxian.books',
-        'zamolxian.reading-list',
-        'zamolxian.tips-tricks',
-        'zamolxian.tutorials',
-        'zamolxian.settings',
-        'zamolxian.irc',
-        'zamolxian.my_account',
-        'zamolxian.docs',
-        'zamolxian.modules_updates',
-        'zamolxian.community',
-        'zamolxian.login',
-        // for mocking httpBackend
-        'ngMockE2E'
-    ])
+    'ngAnimate',
+    'ngSanitize',
+    'ivpusic.cookie',
+    'templates-app',
+    'templates-common',
+    'ui.router.state',
+    'ui.route',
+    'anim-in-out',
+    'ui.bootstrap',
+    'ngTouch',
+    // for mocking httpBackend
+    'ngMockE2E',
+    /*VVV Providers VVV*/
+    'zamolxian.providers.factory',
+    'hljs',
+    /*  Services */
+    'zamolxian.authentication-service',
+    /*VVV App Config VVV*/
+    'zamolxian.config',
+    /* Directives */
+    'zamolxian.directives',
+    /*VVV PAGES VVV*/
+    'zamolxian.home',
+    'zamolxian.home-second',
+    'zamolxian.about',
+    'zamolxian.books',
+    'zamolxian.reading-list',
+    'zamolxian.tips-tricks',
+    'zamolxian.tutorials',
+    'zamolxian.settings',
+    'zamolxian.irc',
+    'zamolxian.my_account',
+    'zamolxian.docs',
+    'zamolxian.modules_updates',
+    'zamolxian.community',
+    'zamolxian.login'
+])
 
     .config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $anchorScrollProvider) {
         $locationProvider.html5Mode(true).hashPrefix('!');
@@ -46,17 +48,13 @@ angular.module('zamolxian', [
 
     })
 
-    .run(function run($rootScope, $httpBackend) {
+    .run(function run($rootScope, $httpBackend, AuthenticationService) {
 
         // Mock http backend service. Intercept URL and respond with a status (and a token)
-        $httpBackend.whenPOST('http://zamolxian.client/login').respond(function(method, url, data, headers) {
-            var realData = JSON.parse(data);
-            console.log('Intercepted POST request. Data below');
-            console.log(realData.password);
-            if (realData.username && realData.password) {
-                return [200, {token: 'abcd1234'}, {}];
-            }
-            return [400, {}, {}];
+        $httpBackend.whenPOST('http://zamolxian.client/login').respond(function (method, url, data, headers) {
+
+            // perform authentication logic, return result
+            return AuthenticationService.authenticate(data);
         });
 
         //Set body class for individual route pages.
@@ -73,6 +71,7 @@ angular.module('zamolxian', [
 
     .controller('AppCtrl', function AppCtrl($scope, $location, $stateParams, $state) {
 
+        // Check if user is logged in. Redirect to login page if not.
         if (!window.localStorage.userToken) {
             console.log("USER NOT LOGGED IN!");
             $state.go('login');
@@ -95,5 +94,4 @@ angular.module('zamolxian', [
         // github provider here
 
     })
-
 ;
