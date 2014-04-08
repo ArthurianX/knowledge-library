@@ -79,6 +79,7 @@ angular.module('zamolxian', [
     .controller('AppCtrl', function AppCtrl($scope, $location, $stateParams, $state, $http) {
 
         // commented out send get request in every API to check user token
+        // test user token verification
         // send request for token verification. headers contain authorization token
 //        $http.get('http://zamolxian.client/verify_token', {headers: {'Authorization': 'Basic ' + window.localStorage.userToken}})
 //            .success(function(data) {
