@@ -23,22 +23,36 @@ angular.module('zamolxian.login', [
         /**
          * Login function. Sends a POST request to the LoginService backend.
          */
-        $scope.login = function() {
+        $scope.login = function () {
             console.log('In login function');
 
             // POST request to the httpBackend.
-            $http.post('http://zamolxian.client/login', JSON.stringify({username: $scope.login.username, password: $scope.login.password}))
-                .success(function(data) {
+            $http.post('https://localhost:3000/oauth/token',
+                {
+                    grant_type: 'password',
+                    username: $scope.login.username,
+                    password: $scope.login.password,
+                    scope: 'offline_access'
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Basic YWJjMTIzOnNzaC1zZWNyZXQ=',
+                        Accept: 'application/json'
+                    }
+                }
+            )
+                .success(function (data) {
                     // store token from data in localStorage on success
                     // redirect to home page
                     console.log('successful login');
-                    window.localStorage.setItem('userToken', data.token);
-                    $state.go('home');
+//                    window.localStorage.setItem('userToken', data.token);
+//                    $state.go('home');
                 })
-                .error(function(data) {
+                .error(function (data) {
                     // show error message
                     console.log('error on login');
-                    $state.go('login');
+//                    $state.go('login');
                 });
         };
     });

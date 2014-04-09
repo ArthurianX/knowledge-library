@@ -64,6 +64,9 @@ angular.module('zamolxian', [
             return AuthenticationService.verifyToken(headers);
         });
 
+        // rest of the requests should pass through
+        $httpBackend.whenPOST('https://localhost:3000/oauth/token').passThrough();
+
         //Set body class for individual route pages.
         $rootScope.$on('$stateChangeSuccess', function (event, currentState) {
             $rootScope.getCurrentLocation = function () {
