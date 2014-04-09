@@ -8,6 +8,7 @@ angular.module('zamolxian', [
         'ui.route',
         'anim-in-out',
         'ui.bootstrap',
+        'facebook',
         /* Listing services */
 //        'listingCommunity',
 //        'listingDocumentation',
@@ -58,11 +59,40 @@ angular.module('zamolxian', [
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
     })
 
+    .config(['$facebookProvider', function($facebookProvider) {
+        $facebookProvider.init({
+            appId: '750912588267247',
+            channel: '/login/fbChanel.html'
+        });
+    }])
+
     // define our fake backend
-    .run(function($httpBackend) {
+    .run(function($httpBackend,zalAuthService) {
         // do not bother server, respond with given content
         $httpBackend.whenGET('premium-content-zalmoxian.html').respond(401, "I can't let you do that Dave", {header: 'one'});
-        // l
+        // cacthing login attempts and routing them to the auth service
+        $httpBackend.whenPOST('/api/login').respond(function(method, url, data, headers) {
+            //console.log(data);
+
+            data = JSON.parse(data);
+            if (data.userName !== undefined && data.password !== undefined) {
+                console.log("I have both a username and a password");
+                var securityToken = zalAuthService.getToken(data);
+                return [200, {token: securityToken}, {}];
+            }
+            console.log("I do not have both a username and a password");
+            return [400, {}, {}];
+        });
+        $httpBackend.whenGET('/api/getrules').respond(function(method, url, data, headers) {
+            console.log("Attempting to get the rules.");
+            zalAuthService.getRules();
+        });
+
+        $httpBackend.whenGET('/api/getinfo').respond(function(method, url, data, headers){
+            console.log("Attempting to get info.");
+            zalAuthService.getRules();
+        });
+
         $httpBackend.whenJSONP().passThrough();
         // For everything else, don't mock
         $httpBackend.whenGET(/^\w+.*/).passThrough();

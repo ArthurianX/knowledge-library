@@ -110,7 +110,21 @@ angular.module('zamolxian.my_account', [
         $scope.errorList = {"firstName": false, "lastName": false, "mail": false, "phoneNumber": false, "adress": false, "county": false, "country": false};
 
         $scope.contactZalmoxis = function () {
-            $scope.contact = false;
+            var userToken = localStorage.getItem('userToken');
+            //connect to the api here
+            $http({
+                    url: "api/getrules",
+                    dataType: "json",
+                    method: "GET",
+                    data: JSON.stringify({"foo":"bar"}),
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8",
+                        "AUTENTIFICATION": "Bearer " + JSON.stringify(userToken)
+                    }
+                }).success( function () {
+                    $scope.contact = false;
+                });
+
         };
 
 

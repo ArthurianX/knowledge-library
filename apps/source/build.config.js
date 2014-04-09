@@ -93,7 +93,8 @@ module.exports = {
             'customlibs/highlight/highlight.pack.js',
             'vendor/angular-highlightjs/angular-highlightjs.min.js',
             'vendor/zone/zone.js',
-            'vendor/angular-mocks/angular-mocks.js'
+            'vendor/angular-mocks/angular-mocks.js',
+            'vendor/ngFacebook/version/v0.0.3/ngFacebook.min.js'
         ],
         css: [
             'vendor/bootstrap/dist/css/bootstrap.min.css',
